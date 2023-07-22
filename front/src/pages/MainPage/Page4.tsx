@@ -5,7 +5,10 @@ import kakaotalk from "../../assets/kakaotalk.png";
 
 const Page4 = () => {
   return (
-    <div className="w-[1062px] h-[100vh] mt-[40px] flex flex-col items-center justify-center">
+    <div
+      id="section4"
+      className="h-[100vh] mt-[-50px] flex flex-col items-center justify-center"
+    >
       <p className="text-4xl font-bold text-black font-main mb-[20px] text-center">
         다른 서비스에서도 쉽고 빠르게
       </p>

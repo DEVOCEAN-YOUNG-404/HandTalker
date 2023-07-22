@@ -3,7 +3,10 @@ import main from "../../assets/main.png";
 
 const Page1 = () => {
   return (
-    <div className="h-[100vh] flex flex-row items-center justify-center mt-[-110px]">
+    <div
+      id="section1"
+      className="h-[100vh] flex flex-row items-center justify-center mt-[-110px]"
+    >
       <div className="flex flex-col items-start justify-start mt-[60px]">
         <p className="font-bold text-black text-[2rem] mb-[10px] font-main">
           내 손 안의 작은 수어 통역가
