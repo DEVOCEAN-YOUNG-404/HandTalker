@@ -4,6 +4,12 @@
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
 
-body::-webkit-scrollbar {
+/* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
 }

@@ -4,7 +4,10 @@ import work from "../../assets/work.png";
 
 const Page3 = () => {
   return (
-    <div className="w-[1062px] h-[100vh] mt-[40px] flex flex-col items-center justify-center">
+    <div
+      id="section3"
+      className="h-[100vh] mt-[-50px] flex flex-col items-center justify-center"
+    >
       <p className="text-4xl font-bold text-black font-main">
         서비스 이용 대상
       </p>

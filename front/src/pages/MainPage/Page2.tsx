@@ -3,7 +3,10 @@ import logo from "../../assets/logo.png";
 
 const Page2 = () => {
   return (
-    <div className="w-[1062px] h-[100vh] mt-[40px] flex flex-row items-center justify-start">
+    <div
+      id="section2"
+      className="ml-[450px] mr-[450px] h-[100vh] mt-[-50px] flex flex-row items-center justify-start"
+    >
       <img src={main2} alt="main2" className="block w-[550px]" />
       <div className="flex flex-col items-start justify-start ml-[80px]">
         <div className="flex flex-row items-center justify-center">
