@@ -46,7 +46,11 @@ const Input = () => {
     ) {
       const camera = new Camera(webcamRef.current.video!, {
         onFrame: async () => {
-          await hands.send({ image: webcamRef.current!.video! });
+          try {
+            await hands.send({ image: webcamRef.current!.video! });
+          } catch (e) {
+            console.log(e);
+          }
         },
         width: 500,
         height: 600,
@@ -60,6 +64,13 @@ const Input = () => {
     const results = resultsRef.current!;
     console.log(results.multiHandLandmarks);
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(OutputData, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  });
 
   return (
     <div className="h-[600px]">
