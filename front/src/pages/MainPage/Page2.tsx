@@ -5,7 +5,7 @@ const Page2 = () => {
   return (
     <div
       id="section2"
-      className="ml-[450px] mr-[450px] h-[100vh] mt-[-50px] flex flex-row items-center justify-start"
+      className="ml-[440px] mr-[440px] h-[100vh] mt-[-50px] flex flex-row items-center justify-start"
     >
       <img src={main2} alt="main2" className="block w-[550px]" />
       <div className="flex flex-col items-start justify-start ml-[80px]">
@@ -16,22 +16,16 @@ const Page2 = () => {
           </p>
         </div>
         <p className="text-base text-gray-400 font-main mt-[20px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-          unde? Mollitia, repellendus quidem quaerat dicta voluptatum pariatur
-          alias deleniti incidunt accusantium eius inventore unde iusto natus
-          non doloremque blanditiis corrupti.
-        </p>
-        <p className="text-base text-gray-400 font-main mt-[20px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-          unde? Mollitia, repellendus quidem quaerat dicta voluptatum pariatur
-          alias deleniti incidunt accusantium eius inventore unde iusto natus
-          non doloremque blanditiis corrupti.
-        </p>
-        <p className="text-base text-gray-400 font-main mt-[20px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-          unde? Mollitia, repellendus quidem quaerat dicta voluptatum pariatur
-          alias deleniti incidunt accusantium eius inventore unde iusto natus
-          non doloremque blanditiis corrupti.
+          HandTalker는 수어를 통해 의사소통을 할 수 있도록 도와주는 수어 번역 웹
+          서비스입니다.
+          <br />
+          <br />
+          HandTalker는 가족 구성원 내 농인 자녀를 위한 소통 서비스를 제공합니다.{" "}
+          <br />
+          <br />
+          또한 후천적 농인을 위한 실습 교육 자료로 서비스를 제공하며 모국어가
+          수어인 농인들의 학습을 보조하는 등 교육 목적으로도 다양하게 활용이
+          가능한 서비스입니다.
         </p>
       </div>
     </div>

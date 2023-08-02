@@ -16,6 +16,7 @@ module.exports = {
     extend: {
       fontFamily: {
         main: ["Pretendard"],
+        skt: ["skt"],
       },
     },
   },
