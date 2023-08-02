@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.png";
 import main from "../../assets/main.png";
+import { Link } from "react-router-dom";
 
 const Page1 = () => {
   return (
@@ -16,9 +17,11 @@ const Page1 = () => {
           HandTalker와 함께라면
           <br /> 언제든 수어 번역 서비스를 이용하실 수 있습니다.
         </p>
-        <button className="bg-green-500 text-white font-main text-base rounded-md mb-[10px] w-[200px] h-[50px] ">
-          번역 서비스 사용해보기
-        </button>
+        <Link to="/translate">
+          <button className="bg-green-500 text-white font-main text-base rounded-md mb-[10px] w-[200px] h-[50px] ">
+            번역 서비스 사용해보기
+          </button>
+        </Link>
       </div>
       <img
         src={main}

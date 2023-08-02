@@ -3,11 +3,18 @@ import Page1 from "./Page1";
 import Page2 from "./Page2";
 import Page3 from "./Page3";
 import Page4 from "./Page4";
+import Page5 from "./Page5";
 import { SectionsContainer, Section } from "react-fullpage";
 
 let options = {
   activeClass: "active", // the class that is appended to the sections links
-  anchors: ["sectionOne", "sectionTwo", "sectionThree", "sectionFour"], // the anchors for each sections
+  anchors: [
+    "sectionOne",
+    "sectionTwo",
+    "sectionThree",
+    "sectionFour",
+    "sectionFive",
+  ], // the anchors for each sections
   arrowNavigation: true, // use arrow keys
   className: "SectionContainer", // the class name for the section container
   delay: 1000, // the scroll animation speed
@@ -35,6 +42,9 @@ const MainPage = () => {
         </Section>
         <Section>
           <Page4 />
+        </Section>
+        <Section>
+          <Page5 />
         </Section>
       </SectionsContainer>
 
