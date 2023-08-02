@@ -21,7 +21,6 @@ const Translate = () => {
           </p>
         </div>
       )}
-
       <div className="ml-[40px] text-6xl text-gray-200">
         <FaArrowRightLong />
       </div>
