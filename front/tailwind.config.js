@@ -18,6 +18,9 @@ module.exports = {
         main: ["Pretendard"],
         skt: ["skt"],
       },
+      screens: {
+        "3xl": "1600px",
+      },
     },
   },
   plugins: [],
