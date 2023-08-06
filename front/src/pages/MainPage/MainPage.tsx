@@ -47,7 +47,6 @@ const MainPage = () => {
           <Page5 />
         </Section>
       </SectionsContainer>
-
       {/* <Page2 />
 
       <Page3 />

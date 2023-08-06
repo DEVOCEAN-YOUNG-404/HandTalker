@@ -7,7 +7,7 @@ const Header = () => {
   const path = location.pathname;
 
   return (
-    <div className="bg-white bg-opacity-70 top-0 sticky z-10 min-w-[1366px] w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
+    <div className="bg-white bg-opacity-70 top-0 fixed z-10 min-w-[1366px] w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
       <img
         src={logo}
         alt="logo"

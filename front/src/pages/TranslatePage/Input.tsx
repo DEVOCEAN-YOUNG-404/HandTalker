@@ -61,8 +61,10 @@ const Input = () => {
 
   /*  랜드마크들의 좌표를 콘솔에 출력 */
   const OutputData = () => {
-    const results = resultsRef.current!;
-    console.log(results.multiHandLandmarks);
+    if (!loading) {
+      const results = resultsRef.current!;
+      if (webcamRef.current !== null) console.log(results.multiHandLandmarks);
+    }
   };
 
   useEffect(() => {

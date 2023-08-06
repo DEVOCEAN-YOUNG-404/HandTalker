@@ -11,7 +11,7 @@ const Translate = () => {
   };
 
   return (
-    <div className="min-w-[1366px] flex flex-row items-center">
+    <div className="h-full flex mt-[-20px] flex-row items-center justify-start md:scale-75 xl:scale-[80%] 2xl:scale-90 3xl:scale-100">
       {translate ? (
         <Input />
       ) : (

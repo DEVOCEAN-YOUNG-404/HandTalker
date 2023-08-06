@@ -5,7 +5,7 @@ const Page2 = () => {
   return (
     <div
       id="section2"
-      className="ml-[240px] min-w-[1366px] mr-[240px] h-[100vh] mt-[-50px] flex flex-row items-center justify-start"
+      className="ml-[400px] min-w-[1266px] mr-[400px] h-[100vh] mt-[-50px] flex flex-row items-center justify-start"
     >
       <img src={main2} alt="main2" className="block w-[550px]" />
       <div className="flex flex-col items-start justify-start ml-[80px]">
