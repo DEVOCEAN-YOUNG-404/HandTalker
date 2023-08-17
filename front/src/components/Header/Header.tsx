@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png";
+import logo from "../../assets/icons/logo.png";
 import HeaderButton from "./HeaderButton";
 import { useLocation } from "react-router-dom";
 

@@ -21,6 +21,12 @@ module.exports = {
       screens: {
         "3xl": "1600px",
       },
+      variants: {
+        borderColor: ["responsive", "hover", "focus", "focus-within"],
+      },
+      transformOrigin: {
+        0: "0%",
+      },
     },
   },
   plugins: [],

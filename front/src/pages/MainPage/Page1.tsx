@@ -1,12 +1,12 @@
-import logo from "../../assets/logo.png";
-import main from "../../assets/main.png";
+import logo from "../../assets/icons/logo.png";
+import main from "../../assets/images/main.png";
 import { Link } from "react-router-dom";
 
 const Page1 = () => {
   return (
     <div
       id="section1"
-      className="h-[100vh] flex flex-row items-center justify-center mt-[-110px]"
+      className="h-[100vh] flex flex-row items-center justify-center md:scale-95 xl:scale-105 2xl:scale-110"
     >
       <div className="flex flex-col items-start justify-start mt-[60px]">
         <p className="font-bold text-black text-[2rem] mb-[10px] font-main">
