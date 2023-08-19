@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { authState } from "../../../utils/atom";
 
 interface FormData {
   email: string;
@@ -8,6 +11,8 @@ interface FormData {
 }
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const login = useSetRecoilState(authState);
   const auth = getAuth();
 
   const {
@@ -21,8 +26,11 @@ const LoginForm = () => {
 
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        const user = userCredential.user.uid;
         console.log(user);
+        localStorage.setItem("UID", user);
+        login(true);
+        navigate("/");
       })
       .catch((error) => {
         const errorMessage = error.message;
