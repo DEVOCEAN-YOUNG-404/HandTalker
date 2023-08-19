@@ -1,5 +1,9 @@
 import { useForm, Controller } from "react-hook-form";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useSetRecoilState } from "recoil";
+import { authState } from "../../../utils/atom";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 interface FormData {
   email: string;
   password: string;
@@ -8,6 +12,20 @@ interface FormData {
 
 const SignUpForm = () => {
   const auth = getAuth();
+  const signup = useSetRecoilState(authState);
+  const navigate = useNavigate();
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-right",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
   const {
     control,
@@ -21,8 +39,15 @@ const SignUpForm = () => {
 
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        const user = userCredential.user.uid;
         console.log(user);
+        localStorage.setItem("UID", user);
+        signup(true);
+        navigate("/");
+        Toast.fire({
+          icon: "success",
+          title: "로그아웃 성공!",
+        });
       })
       .catch((error) => {
         const errorMessage = error.message;

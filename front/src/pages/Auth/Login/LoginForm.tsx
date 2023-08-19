@@ -4,6 +4,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { authState } from "../../../utils/atom";
+import Swal from "sweetalert2";
 
 interface FormData {
   email: string;
@@ -14,6 +15,18 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const login = useSetRecoilState(authState);
   const auth = getAuth();
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-right",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
   const {
     control,
@@ -31,6 +44,10 @@ const LoginForm = () => {
         localStorage.setItem("UID", user);
         login(true);
         navigate("/");
+        Toast.fire({
+          icon: "success",
+          title: "로그인 성공!",
+        });
       })
       .catch((error) => {
         const errorMessage = error.message;
