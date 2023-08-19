@@ -3,16 +3,32 @@ import HeaderButton from "./HeaderButton";
 import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { authState } from "../../utils/atom";
+import Swal from "sweetalert2";
 
 const Header = () => {
   const location = useLocation();
   const path = location.pathname;
   const [auth, setAuth] = useRecoilState(authState);
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-right",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   const logoutHandler = () => {
     localStorage.removeItem("UID");
     setAuth(false);
-    console.log("logged out");
+    Toast.fire({
+      icon: "success",
+      title: "로그아웃 성공!",
+    });
   };
 
   return (
