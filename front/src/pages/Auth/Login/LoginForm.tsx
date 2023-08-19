@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 interface FormData {
   email: string;
@@ -7,6 +8,8 @@ interface FormData {
 }
 
 const LoginForm = () => {
+  const auth = getAuth();
+
   const {
     control,
     handleSubmit,
@@ -15,6 +18,16 @@ const LoginForm = () => {
 
   const loginHandler = (data: FormData) => {
     console.log(data.email, data.password);
+
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
 
   return (

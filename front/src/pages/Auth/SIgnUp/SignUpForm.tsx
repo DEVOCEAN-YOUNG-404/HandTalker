@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 interface FormData {
   email: string;
   password: string;
@@ -7,6 +7,8 @@ interface FormData {
 }
 
 const SignUpForm = () => {
+  const auth = getAuth();
+
   const {
     control,
     handleSubmit,
@@ -16,6 +18,16 @@ const SignUpForm = () => {
 
   const signupHandler = (data: FormData) => {
     console.log(data.email, data.password);
+
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
 
   return (
