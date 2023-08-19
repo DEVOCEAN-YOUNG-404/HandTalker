@@ -1,12 +1,14 @@
-import logo from "../../assets/logo.png";
-import seungjun from "../../assets/seungjun.jpeg";
-import sujin from "../../assets/sujin.jpeg";
+import logo from "../../assets/icons/logo.png";
+import seungjun from "../../assets/images/seungjun.jpeg";
+import sujin from "../../assets/images/sujin.jpeg";
+import hyeonbin from "../../assets/images/hyeonbin.png";
+import bokyeong from "../../assets/images/bokyeong.jpeg";
 import { AiFillGithub } from "react-icons/ai";
-import Footer from "../../components/Footer/Footer";
+
 const Page5 = () => {
   return (
     <div id="section5">
-      <div className="scale-[0.8] ml-[440px] mr-[440px] w-full h-[583px] mt-[100px] flex flex-col items-start justify-center">
+      <div className="xl:scale-[0.8] 2xl:scale-100 ml-[440px] mr-[440px] w-full h-[100vh] flex flex-col items-start justify-center">
         <div className="flex flex-row items-center justify-center">
           <img src={logo} alt="logo" className="w-[250px]" />
           <p className="ml-[10px] text-4xl font-bold text-black font-main">
@@ -42,7 +44,7 @@ const Page5 = () => {
             </div>
             <div className="flex flex-row items-center justify-start mt-[50px] ml-[140px] w-[400px]">
               <div className="w-[180px] h-[180px] rounded-full overflow-hidden">
-                <img src={seungjun} alt="seungjun" className="w-full" />
+                <img src={bokyeong} alt="seungjun" className="w-full" />
               </div>
               <div className="flex flex-col items-start justify-center ml-[20px]">
                 <p className="text-4xl font-bold text-black font-main">
@@ -88,7 +90,7 @@ const Page5 = () => {
             </div>
             <div className="flex flex-row items-center justify-start mt-[50px] ml-[140px] w-[400px]">
               <div className="w-[180px] h-[180px] rounded-full overflow-hidden">
-                <img src={seungjun} alt="seungjun" className="w-full" />
+                <img src={hyeonbin} alt="seungjun" className="w-full" />
               </div>
               <div className="flex flex-col items-start justify-center ml-[20px]">
                 <p className="text-4xl font-bold text-black font-main">
@@ -111,7 +113,6 @@ const Page5 = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

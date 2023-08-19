@@ -28,7 +28,7 @@ let options = {
 
 const MainPage = () => {
   return (
-    <div className="min-w-[1366px] flex items-center justify-center flex-col">
+    <div className="min-w-[1366px] w-full flex items-center justify-center flex-col">
       <Header />
       <SectionsContainer {...options}>
         <Section>
@@ -47,11 +47,6 @@ const MainPage = () => {
           <Page5 />
         </Section>
       </SectionsContainer>
-      {/* <Page2 />
-
-      <Page3 />
-
-      <Page4 /> */}
     </div>
   );
 };

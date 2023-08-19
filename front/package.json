@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@emotion/css": "^11.11.2",
+    "@headlessui/react": "^1.7.16",
+    "@heroicons/react": "^2.0.18",
     "@mediapipe/camera_utils": "^0.3.1675466862",
     "@mediapipe/drawing_utils": "^0.3.1675466124",
     "@mediapipe/hands": "^0.4.1675469240",
@@ -14,10 +16,13 @@
     "@types/node": "^16.18.38",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "axios": "^1.4.0",
+    "firebase": "^10.1.0",
     "fullpage.js": "^4.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fullpage": "^0.1.19",
+    "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
@@ -28,7 +33,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true SSL_CRT_FILE=./.cert/cert.pem SSL_KEY_FILE=./.cert/key.pem react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

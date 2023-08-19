@@ -14,7 +14,16 @@ body {
   scrollbar-width: none; /* 파이어폭스 */
 }
 
-@font-face {
-  font-family: "skt";
-  src: url("../assets/SKTSansTTFRegular.ttf");
+input:focus-within ~ label {
+  @apply transform scale-75 -translate-y-6 text-main-2 duration-300;
+}
+
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-6;
+}
+
+.outline input:focus-within ~ label,
+.outline input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-6 z-0 px-1;
 }

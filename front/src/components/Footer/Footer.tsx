@@ -1,6 +1,6 @@
-import logo from "../../assets/handtalker.png";
+import logo from "../../assets/icons/handtalker.png";
 import { AiFillGithub } from "react-icons/ai";
-import devocean from "../../assets/footer_devocean.png";
+import devocean from "../../assets/icons/footer_devocean.png";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <div
-      className={`bg-[#23A352] w-screen left-0 ${
+      className={`bg-[#23A352] w-full left-0 ${
         path === "/" ? "fixed bottom-[0px]" : "bottom-0"
       } h-[200px] flex flex-row items-center justify-center`}
     >
