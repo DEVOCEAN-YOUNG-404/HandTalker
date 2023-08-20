@@ -1,6 +1,6 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import Input from "./Input";
-import { translateState } from "../../utils/atom";
+import { translateState } from "../../utils/recoil/atom";
 import { useRecoilState } from "recoil";
 import { BsPersonFill } from "react-icons/bs";
 import { useState, Fragment } from "react";
@@ -65,7 +65,7 @@ const Translate = () => {
   };
 
   return (
-    <div className="h-full flex mt-[-60px] flex-col items-center justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
+    <div className="w-full h-full flex mt-[-60px] flex-col items-center justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
       {loading ? (
         <p className="w-[200px] scale-125 items-end justify-end ml-[629px]">
           loading...

@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 import { css } from "@emotion/css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Hands, Results } from "@mediapipe/hands";
-import { drawCanvas } from "../../utils/drawCanvas";
+import { drawCanvas } from "../../utils/translate/drawCanvas";
 
 const Input = () => {
   const webcamRef = useRef<Webcam>(null);

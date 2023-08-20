@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { translateState } from "../../utils/atom";
+import { translateState } from "../../utils/recoil/atom";
 
 type HeaderButtonProps = {
   isClicked: boolean;

@@ -2,7 +2,7 @@ import logo from "../../assets/icons/logo.png";
 import HeaderButton from "./HeaderButton";
 import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { authState } from "../../utils/atom";
+import { authState } from "../../utils/recoil/atom";
 import Swal from "sweetalert2";
 
 const Header = () => {

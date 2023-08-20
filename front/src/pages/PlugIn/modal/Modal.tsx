@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ModalPortal } from "../../../utils/ModalPortal";
+import { ModalPortal } from "../../../utils/helpers/ModalPortal";
 import { GrClose, GrNext, GrPrevious } from "react-icons/gr";
 import MPage1 from "./MPage1";
 import MPage2 from "./MPage2";

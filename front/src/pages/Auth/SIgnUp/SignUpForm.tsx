@@ -1,7 +1,7 @@
 import { useForm, Controller } from "react-hook-form";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useSetRecoilState } from "recoil";
-import { authState } from "../../../utils/atom";
+import { authState } from "../../../utils/recoil/atom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 interface FormData {

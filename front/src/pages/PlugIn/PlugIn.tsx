@@ -2,7 +2,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import UsrOnline from "./UsrOnline";
 import { useRecoilValue } from "recoil";
-import { authState } from "../../utils/atom";
+import { authState } from "../../utils/recoil/atom";
 import UsrOffline from "./UsrOffline";
 
 const Plugin = () => {

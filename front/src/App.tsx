@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import MainPage from "./pages/MainPage/MainPage";
-import ScrollToTop from "./utils/ScrollToTop";
+import ScrollToTop from "./utils/helpers/ScrollToTop";
 import TranslatePage from "./pages/TranslatePage/TranslatePage";
 import Plugin from "./pages/PlugIn/PlugIn";
 import Login from "./pages/Auth/Login/Login";
