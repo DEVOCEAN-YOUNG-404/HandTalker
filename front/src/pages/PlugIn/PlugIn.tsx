@@ -12,7 +12,6 @@ const Plugin = () => {
     <div className="min-w-[1366px] h-[100vh] flex flex-col">
       <Header />
       {isLogin ? <UsrOnline /> : <UsrOffline />}
-
       <Footer />
     </div>
   );
