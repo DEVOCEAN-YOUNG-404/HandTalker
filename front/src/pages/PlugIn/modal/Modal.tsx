@@ -20,7 +20,7 @@ const Modal = ({ onOpenModal }: ModalProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const nextPage = () => {
-    if (currentPage < 4) {
+    if (currentPage < 3) {
       setCurrentPage(currentPage + 1);
     }
   };
