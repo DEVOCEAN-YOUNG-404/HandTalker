@@ -9,4 +9,5 @@
 |지현빈|인공지능 개발| <a href="https://github.com/hyeonbinji"><img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white"/></a> |
 
 # ⚙️ 작동 구조
-<img width="900" alt="image" src="https://github.com/DEVOCEAN-YOUNG-404/HandTalker/assets/80333011/865776b8-7df7-420f-9c1c-1e0caffe2b43">
+<img width="900" alt="image" src="https://github.com/DEVOCEAN-YOUNG-404/HandTalker/assets/80333011/64b9e64f-ca09-46e6-88f0-7fbc098d7447">
+
