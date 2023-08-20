@@ -67,11 +67,11 @@ const Translate = () => {
   return (
     <div className="h-full flex mt-[-60px] flex-col items-center justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
       {loading ? (
-        <p className="w-[200px] h-[50px] scale-125 items-center justify-center ml-[1007px]">
+        <p className="w-[200px] scale-125 items-end justify-end ml-[629px]">
           loading...
         </p>
       ) : (
-        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[1007px]">
+        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[629px]">
           <Listbox value={selectedItem} onChange={setSelectedItem}>
             <div className="mt-5">
               <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-green-300 sm:text-sm">
@@ -122,7 +122,7 @@ const Translate = () => {
         </div>
       )}
 
-      <div className="flex flex-row items-center justify-center">
+      <div className="ml-[-380px] flex flex-row items-center justify-center">
         {translate ? (
           <Input />
         ) : (
