@@ -1,3 +1,5 @@
+<img width="760" alt="handtalker_mockup" src="https://github.com/DEVOCEAN-YOUNG-404/HandTalker/assets/80333011/9d7080a2-83f5-4540-96ea-1c5432b919f3">
+
 > DEVOCEAN YOUNG 2기 404의 팀 프로젝트 Repository입니다.
 >
 # 👪 팀원
