@@ -168,7 +168,7 @@ const Translate = () => {
           <FaArrowRightLong />
         </p>
         {translate ? (
-          <div className="flex flex-col ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
+          <div className="flex flex-col ml-[30px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
             <p className="text-4xl text-black font-main p-9">{text}</p>
             <div
               className={`flex flex-row items-center justify-center h-[50px] ${
