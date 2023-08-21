@@ -1,0 +1,40 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  push:
+    branches: ['master'] # push시 배포할 branch명, 보통 main을 많이 쓰던데..
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # git 소스 체크아웃
+      - name: git checkout
+        uses: actions/checkout@v3
+        
+      # node 버전 설정
+      - name: setup node
+        uses: actions/setup-node@v2.5.2
+        with:
+          node-version: 17.x
+      # npm install 진행(모듈 설치)
+      - name: npm install
+        run: npm install
+        
+      # 리엑트 프로젝트 빌드
+      - name: npm build
+        run: npm run build
+        env:
+          CI: false
+      
+      # s3에 배포
+      - name: deploy s3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run:
+          # sync : 변경된 파일만 / --delete : 원본경로에서 삭제시 타깃에서도 삭제
+          aws s3 sync --delete --region us-east-1 build s3://handtalker
