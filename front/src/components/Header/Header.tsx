@@ -38,7 +38,6 @@ const Header = () => {
         alt="logo"
         className="fixed w-[174px] ml-[120px] flex-1"
       />
-
       <div className="flex flex-row items-center justify-center ml-[58vw] flex-1 h-full">
         <HeaderButton
           isClicked={path === "/" ? true : false}

@@ -18,6 +18,9 @@ module.exports = {
         main: ["Pretendard"],
         skt: ["skt"],
       },
+      dropShadow: {
+        xl: "0px 0px 10px rgba(0, 0, 0, 0.30)",
+      },
       screens: {
         "3xl": "1600px",
       },

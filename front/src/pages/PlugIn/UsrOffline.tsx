@@ -20,7 +20,7 @@ const UsrOffline = () => {
               모두에게 공유하고 싶다면?
             </p>
             <p className="text-xl leading-normal text-gray-400 font-main mt-[20px]">
-              HandTalker로 번역한 메시지를 <br /> 디스코드로 전송해보세요.
+              HandTalker로 번역한 메시지를 <br /> 여러 서비스로 전송해보세요.
             </p>
             <Link to="/login">
               <button className="flex flex-row justify-center items-center bg-main-2 w-[300px] h-[50px] text-xl text-white font-main mt-[20px] rounded-lg">

@@ -11,9 +11,9 @@ const Footer = () => {
     <div
       className={`bg-[#23A352] w-full left-0 ${
         path === "/" ? "fixed bottom-[0px]" : "bottom-0"
-      } h-[200px] flex flex-row items-center justify-center`}
+      } h-[130px] flex flex-row items-center justify-center`}
     >
-      <img src={logo} alt="logo" className="w-[150px]" />
+      <img src={logo} alt="logo" className="w-auto h-[130px]" />
       <div className="flex flex-col items-start justify-start ml-[30px]">
         <p className="font-main text-[rgb(61,125,71)] text-sm">
           ©2023 HandTalker
