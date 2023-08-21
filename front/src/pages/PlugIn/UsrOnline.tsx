@@ -28,7 +28,7 @@ const UsrOnline = () => {
           디스코드 연결 정보 확인
         </button>
       </div>
-      <div className="w-full max-h-[700px] flex justify-end items-center">
+      <div className="mr-[200px] w-full max-h-[700px] flex justify-end items-center">
         <img
           src={plugin1}
           alt="디스코드 화면"
