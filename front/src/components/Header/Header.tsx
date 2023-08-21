@@ -2,7 +2,7 @@ import logo from "../../assets/icons/logo.png";
 import HeaderButton from "./HeaderButton";
 import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { authState } from "../../utils/atom";
+import { authState } from "../../utils/recoil/atom";
 import Swal from "sweetalert2";
 
 const Header = () => {
@@ -38,7 +38,6 @@ const Header = () => {
         alt="logo"
         className="fixed w-[174px] ml-[120px] flex-1"
       />
-
       <div className="flex flex-row items-center justify-center ml-[58vw] flex-1 h-full">
         <HeaderButton
           isClicked={path === "/" ? true : false}

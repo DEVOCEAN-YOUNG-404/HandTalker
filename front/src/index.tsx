@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.css";
 import App from "./App";
-import firebase from "./utils/firebase";
+import firebase from "./utils/helpers/firebase";
 import "firebase/auth";
 
 console.log(firebase);

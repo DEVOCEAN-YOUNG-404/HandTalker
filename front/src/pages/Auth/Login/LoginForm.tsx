@@ -3,13 +3,9 @@ import { useForm, Controller } from "react-hook-form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { authState } from "../../../utils/atom";
+import { authState } from "../../../utils/recoil/atom";
 import Swal from "sweetalert2";
-
-interface FormData {
-  email: string;
-  password: string;
-}
+import { LoginFormData } from "../../../types/LoginFormData";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -32,9 +28,9 @@ const LoginForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<LoginFormData>();
 
-  const loginHandler = (data: FormData) => {
+  const loginHandler = (data: LoginFormData) => {
     console.log(data.email, data.password);
 
     signInWithEmailAndPassword(auth, data.email, data.password)
