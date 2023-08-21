@@ -78,6 +78,10 @@ const Translate = () => {
     }
   };
 
+  const textClearHandler = () => {
+    setText("");
+  };
+
   const Toast = Swal.mixin({
     toast: true,
     position: "top-right",
@@ -93,9 +97,11 @@ const Translate = () => {
   return (
     <div className="w-full h-full flex mt-[-60px] flex-col items-center justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
       {loading ? (
-        <p className="w-[200px] scale-125 items-end justify-end ml-[629px]">
-          loading...
-        </p>
+        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[629px]">
+          <div className="relative mt-[20px] w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default sm:text-sm">
+            loading...
+          </div>
+        </div>
       ) : (
         <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[629px]">
           <Listbox value={selectedItem} onChange={setSelectedItem}>
@@ -162,9 +168,13 @@ const Translate = () => {
           <FaArrowRightLong />
         </p>
         {translate ? (
-          <div className="flex flex-col font-main text-4xl text-black p-9 ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
-            {text}
-            <div className="flex flex-row items-center justify-center h-[50px] mt-[460px]">
+          <div className="flex flex-col  ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
+            <p className="text-4xl text-black font-main p-9">{text}</p>
+            <div
+              className={`flex flex-row items-center justify-center h-[50px] ${
+                text === "" ? "mt-[460px]" : "mt-[420px]"
+              }`}
+            >
               <button
                 onClick={() => {
                   copyToClipboardHandler(text);
@@ -173,12 +183,15 @@ const Translate = () => {
               >
                 <BiCopy />
               </button>
-              <button className="text-4xl text-gray-300 mr-[75px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer">
+              <button
+                onClick={textClearHandler}
+                className="text-4xl text-gray-300 mr-[75px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer"
+              >
                 <BiRevision />
               </button>
               <button
                 onClick={SendMessage}
-                className=" flex flex-row justify-center items-center rounded-xl min-w-[300px] w-[300px] h-[50px] bg-[#5865f2] text-white font-main text-xl"
+                className="flex flex-row justify-center items-center rounded-xl min-w-[300px] w-[300px] h-[50px] bg-[#5865f2] text-white font-main text-xl"
               >
                 <img
                   src={discord}
@@ -191,8 +204,11 @@ const Translate = () => {
           </div>
         ) : (
           <div>
-            <div className="font-main font-bold text-3xl text-black p-9 ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
-              번역을 시작하려면 아래 버튼을 눌러주세요. <br />
+            <div className="p-9 ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
+              <p className="text-3xl font-bold leading-normal text-black font-main">
+                번역을 시작하려면 <br />
+                아래 버튼을 눌러주세요. <br />
+              </p>
               <button
                 onClick={onClick}
                 className="w-[140px] h-[55px] mt-[30px] rounded-xl font-bold font-main text-xl text-white bg-main-2"
