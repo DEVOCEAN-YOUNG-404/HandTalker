@@ -77,7 +77,7 @@ const Input = () => {
   return (
     <div className="h-[600px]">
       {loading && (
-        <div className="z-10 absolute w-[500px] h-[600px] rounded-xl border border-gray-200 shadow-md flex mt-[16px] ml-[120px] items-center justify-center">
+        <div className="z-10 absolute w-[500px] h-[600px] rounded-xl border border-gray-200 shadow-md flex mt-[16px] items-center justify-center">
           로딩 중...
         </div>
       )}
@@ -122,7 +122,6 @@ const styles = {
     overflow: hidden;
     display: flex;
     margin-top: 16px;
-    margin-left: 120px;
     justify-content: center;
     align-items: center;
     border-radius: 15px;

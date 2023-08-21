@@ -3,6 +3,7 @@ import HeaderButton from "./HeaderButton";
 import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { authState } from "../../utils/recoil/atom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Header = () => {
@@ -32,13 +33,18 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-70 top-0 fixed z-10 min-w-[1366px] w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
-      <img
-        src={logo}
-        alt="logo"
-        className="fixed w-[174px] ml-[120px] flex-1"
-      />
-      <div className="flex flex-row items-center justify-center ml-[58vw] flex-1 h-full">
+    <div className="bg-white bg-opacity-70 top-0 fixed z-10 min-w-[1266px] w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
+      <div className="flex-1">
+        <Link to="/">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-auto h-[24px] ml-[120px] flex-1"
+          />
+        </Link>
+      </div>
+
+      <div className="flex flex-row items-center justify-center ml-[40vw] flex-1 h-full">
         <HeaderButton
           isClicked={path === "/" ? true : false}
           name="메인"

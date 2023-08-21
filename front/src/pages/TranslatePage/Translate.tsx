@@ -95,15 +95,15 @@ const Translate = () => {
   });
 
   return (
-    <div className="w-full h-full flex mt-[-60px] flex-col items-center justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
+    <div className="w-full h-full flex mt-[-60px] flex-col items-center justify-center md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
       {loading ? (
-        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[629px]">
+        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[878px]">
           <div className="relative mt-[20px] w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default sm:text-sm">
             loading...
           </div>
         </div>
       ) : (
-        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[629px]">
+        <div className="w-[200px] h-[50px] scale-125 items-end justify-end ml-[878px]">
           <Listbox value={selectedItem} onChange={setSelectedItem}>
             <div className="mt-5">
               <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-green-300 sm:text-sm">
@@ -154,11 +154,11 @@ const Translate = () => {
         </div>
       )}
 
-      <div className="ml-[-380px] flex flex-row items-center justify-center">
+      <div className="flex flex-row items-center justify-center">
         {translate ? (
           <Input />
         ) : (
-          <div className="w-[500px] h-[600px] ml-[120px] mt-[30px] flex flex-col justify-center items-center bg-gray-200 border-none rounded-xl">
+          <div className="w-[500px] h-[600px] ml-[0px] mt-[30px] flex flex-col justify-center items-center bg-gray-200 border-none rounded-xl">
             <p className="text-[400px] text-gray-300">
               <BsPersonFill />
             </p>
@@ -168,7 +168,7 @@ const Translate = () => {
           <FaArrowRightLong />
         </p>
         {translate ? (
-          <div className="flex flex-col  ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
+          <div className="flex flex-col ml-[30px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
             <p className="text-4xl text-black font-main p-9">{text}</p>
             <div
               className={`flex flex-row items-center justify-center h-[50px] ${

@@ -19,7 +19,7 @@ module.exports = {
         skt: ["skt"],
       },
       dropShadow: {
-        xl: "0px 0px 10px rgba(0, 0, 0, 0.30)",
+        xl: "0px 0px 10px rgba(0, 0, 0, 0.35)",
       },
       screens: {
         "3xl": "1600px",
