@@ -9,6 +9,8 @@ import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import axios from "axios";
 import { useEffect } from "react";
 import discord from "../../assets/icons/discord.png";
+import { BiCopy, BiRevision } from "react-icons/bi";
+import Swal from "sweetalert2";
 
 interface Channel {
   id: string;
@@ -63,6 +65,30 @@ const Translate = () => {
       .then((response) => console.log(response.data))
       .catch((e) => console.error(e));
   };
+
+  const copyToClipboardHandler = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      Toast.fire({
+        icon: "success",
+        title: "클립보드에 복사되었습니다!",
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-right",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
   return (
     <div className="w-full h-full flex mt-[-60px] flex-col items-center justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
@@ -132,19 +158,36 @@ const Translate = () => {
             </p>
           </div>
         )}
-        <div className="ml-[40px] text-6xl text-gray-200">
+        <p className="ml-[40px] text-6xl text-gray-200">
           <FaArrowRightLong />
-        </div>
+        </p>
         {translate ? (
-          <div className="font-main text-4xl text-black p-9 ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
+          <div className="flex flex-col font-main text-4xl text-black p-9 ml-[40px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
             {text}
-            <button
-              onClick={SendMessage}
-              className="ml-[150px] mt-[460px] flex flex-row justify-center items-center rounded-xl w-[300px] h-[50px] bg-[#5865f2] text-white font-main text-xl"
-            >
-              <img src={discord} alt="discord" className="w-[50px] mr-[5px]" />
-              디스코드로 전송
-            </button>
+            <div className="flex flex-row items-center justify-center h-[50px] mt-[460px]">
+              <button
+                onClick={() => {
+                  copyToClipboardHandler(text);
+                }}
+                className="text-4xl text-gray-300 mr-[15px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer"
+              >
+                <BiCopy />
+              </button>
+              <button className="text-4xl text-gray-300 mr-[75px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer">
+                <BiRevision />
+              </button>
+              <button
+                onClick={SendMessage}
+                className=" flex flex-row justify-center items-center rounded-xl min-w-[300px] w-[300px] h-[50px] bg-[#5865f2] text-white font-main text-xl"
+              >
+                <img
+                  src={discord}
+                  alt="discord"
+                  className="w-[50px] mr-[5px]"
+                />
+                디스코드로 전송
+              </button>
+            </div>
           </div>
         ) : (
           <div>

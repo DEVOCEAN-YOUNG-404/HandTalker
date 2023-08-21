@@ -4,11 +4,7 @@ import { useSetRecoilState } from "recoil";
 import { authState } from "../../../utils/recoil/atom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-interface FormData {
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+import { SignUpFormData } from "../../../types/SignUpFormData";
 
 const SignUpForm = () => {
   const auth = getAuth();
@@ -32,9 +28,9 @@ const SignUpForm = () => {
     handleSubmit,
     formState: { errors },
     getValues,
-  } = useForm<FormData>();
+  } = useForm<SignUpFormData>();
 
-  const signupHandler = (data: FormData) => {
+  const signupHandler = (data: SignUpFormData) => {
     console.log(data.email, data.password);
 
     createUserWithEmailAndPassword(auth, data.email, data.password)

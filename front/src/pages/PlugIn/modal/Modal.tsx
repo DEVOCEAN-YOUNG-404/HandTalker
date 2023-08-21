@@ -4,10 +4,7 @@ import { GrClose, GrNext, GrPrevious } from "react-icons/gr";
 import MPage1 from "./MPage1";
 import MPage2 from "./MPage2";
 import MPage3 from "./MPage3";
-
-type ModalProps = {
-  onOpenModal: () => void;
-};
+import { ModalProps } from "../../../types/ModalProps";
 
 const Modal = ({ onOpenModal }: ModalProps) => {
   useEffect(() => {
