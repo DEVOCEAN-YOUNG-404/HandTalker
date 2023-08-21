@@ -59,11 +59,41 @@ const Input = () => {
     }
   }, [onResults]);
 
-  /*  랜드마크들의 좌표를 콘솔에 출력 */
+  // 웹 서버에 연결
+  var webSocket = new WebSocket("ws://localhost:3001");
+  const messageTextArea = document.getElementById("messageTextArea") as HTMLTextAreaElement;
+
+  // WebSocket 연결 후 데이터 전송
+  webSocket.onopen = function (event) {
+    OutputData();
+  };
+
+  // WebSocket 연결이 끊긴 경우
+  webSocket.onclose = function (event) {
+    messageTextArea.value += "Server Disconnect...\n";
+  };
+
+  // WebSocket 에러 발생한 경우
+  webSocket.onerror = (message) => {
+    messageTextArea.value += "error...\n";
+  };
+
+  // 서버에서 받은 메시지
+  webSocket.onmessage = (message) => {
+    messageTextArea.value += "Recieve From Server => " + message.data + "\n";
+  };
+
+  /*  랜드마크들의 좌표를 콘솔에 출력 및 websocket으로 전달 */
   const OutputData = () => {
     if (!loading) {
-      const results = resultsRef.current!;
-      if (webcamRef.current !== null) console.log(results.multiHandLandmarks);
+      if (webcamRef.current !== null) {
+        const results = resultsRef.current!;
+        if(resultsRef.current){
+          console.log(resultsRef.current.multiHandLandmarks);
+          // 웹소켓으로 데이터 전송
+          webSocket.send(JSON.stringify(resultsRef.current.multiHandLandmarks));
+        }
+      };
     }
   };
 
