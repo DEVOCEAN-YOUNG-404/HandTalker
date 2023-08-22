@@ -16,15 +16,10 @@ const UsrOnline = () => {
   };
 
   return (
-    <div className="h-full min-w-[1366px] w-full flex justify-start mt-[100px] flex-col mb-[100px]">
+    <div className="h-full min-w-[1366px] w-full flex justify-center items-center mt-[100px] flex-col mb-[100px]">
       {openModal && <Modal onOpenModal={onModalAlert} />}
 
-      <div className="flex items-start justify-start">
-        <p className="h-auto text-5xl font-bold text-black font-main ml-[118px]">
-          플러그인
-        </p>
-      </div>
-      <div className="h-full flex flex-col items-start justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
+      <div className="h-full flex flex-col items-center justify-center md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
         <div className="flex flex-row h-[320px] items-center justify-center w-full mb-[50px]">
           <div className="w-[301px] h-[320px] mt-[50px] border border-[#5865F2] flex flex-col items-center justify-center rounded-xl ">
             <img
