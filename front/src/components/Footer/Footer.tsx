@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div
       className={`bg-[#23A352] w-full ${
-        path === "/" ? "fixed bottom-[0px]" : ""
+        path === "/" ? "fixed bottom-[0px]" : "relative"
       } h-[130px] flex flex-row items-center justify-center`}
     >
       <img src={logo} alt="logo" className="w-auto h-[130px]" />
