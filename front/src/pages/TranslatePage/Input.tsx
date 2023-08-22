@@ -153,7 +153,7 @@ const Input = () => {
 const styles = {
   container: css`
     position: relative;
-    width: 500px;
+    width: 31.25rem;
     height: auto;
     overflow: hidden;
     display: flex;
@@ -164,23 +164,9 @@ const styles = {
   `,
   canvas: css`
     position: absolute;
-    width: 500px;
-    height: 600px;
+    width: 31.25rem;
+    height: 37.5rem;
     background-color: #fff;
-  `,
-  buttonContainer: css`
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  `,
-  button: css`
-    color: #fff;
-    background-color: #0082cf;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 10px;
-    cursor: pointer;
   `,
 };
 

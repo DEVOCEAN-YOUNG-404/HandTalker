@@ -4,7 +4,7 @@ import Translate from "./Translate";
 
 const TranslatePage = () => {
   return (
-    <div className="min-w-[1366px] w-full h-[100vh] flex flex-col">
+    <div className="w-full h-[100vh] flex flex-col">
       <Header />
       <Translate />
       <Footer />
