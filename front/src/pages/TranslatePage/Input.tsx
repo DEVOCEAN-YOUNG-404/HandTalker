@@ -4,6 +4,8 @@ import { css } from "@emotion/css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Hands, Results } from "@mediapipe/hands";
 import { drawCanvas } from "../../utils/translate/drawCanvas";
+import { useRecoilState } from "recoil";
+import { resultText } from "../../utils/recoil/atom";
 
 const Input = () => {
   const webcamRef = useRef<Webcam>(null);
@@ -11,6 +13,7 @@ const Input = () => {
   const resultsRef = useRef<Results>();
   const [loading, setLoading] = useState<boolean>(true);
   const handleUserMedia = () => setTimeout(() => setLoading(false), 1_000);
+  const [text, setText] = useRecoilState(resultText);
 
   /**
    * 검출결과（프레임마다 호출됨）
@@ -59,41 +62,44 @@ const Input = () => {
     }
   }, [onResults]);
 
-  // 웹 서버에 연결
-  var webSocket = new WebSocket("ws://localhost:3001");
-  const messageTextArea = document.getElementById("messageTextArea") as HTMLTextAreaElement;
-
-  // WebSocket 연결 후 데이터 전송
-  webSocket.onopen = function (event) {
-    OutputData();
+  const socket = new WebSocket("ws://localhost:8080");
+  socket.onmessage = (event) => {
+    console.log(`receive message: ${event.data}`);
+    const jsonString = JSON.parse(event.data);
+    setText(text + jsonString.result);
+    console.log(text);
   };
 
-  // WebSocket 연결이 끊긴 경우
-  webSocket.onclose = function (event) {
-    messageTextArea.value += "Server Disconnect...\n";
-  };
-
-  // WebSocket 에러 발생한 경우
-  webSocket.onerror = (message) => {
-    messageTextArea.value += "error...\n";
-  };
-
-  // 서버에서 받은 메시지
-  webSocket.onmessage = (message) => {
-    messageTextArea.value += "Recieve From Server => " + message.data + "\n";
-  };
+  useEffect(() => {
+    socket.onopen = () => {
+      console.log("ws connected");
+    };
+    socket.onclose = () => {
+      console.log("ws closed");
+    };
+    socket.onmessage = (event) => {
+      console.log(`receive message: ${event.data}`);
+    };
+    return () => {
+      socket.close();
+    };
+  }, []);
 
   /*  랜드마크들의 좌표를 콘솔에 출력 및 websocket으로 전달 */
   const OutputData = () => {
     if (!loading) {
       if (webcamRef.current !== null) {
         const results = resultsRef.current!;
-        if(resultsRef.current){
-          console.log(resultsRef.current.multiHandLandmarks);
+        if (resultsRef.current) {
+          console.log(results.multiHandLandmarks);
           // 웹소켓으로 데이터 전송
-          webSocket.send(JSON.stringify(resultsRef.current.multiHandLandmarks));
+          if (socket.readyState === WebSocket.OPEN) {
+            socket.send(JSON.stringify(results.multiHandLandmarks));
+          } else {
+            console.error("ws connection is not open");
+          }
         }
-      };
+      }
     }
   };
 
