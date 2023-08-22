@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-70 top-0 fixed z-10 min-w-[1266px] w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
+    <div className="bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
       <div className="flex-1">
         <Link to="/">
           <img

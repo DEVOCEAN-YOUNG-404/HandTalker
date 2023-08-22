@@ -159,7 +159,7 @@ const Translate = () => {
         {translate ? (
           <Input />
         ) : (
-          <div className="w-[500px] h-[600px] ml-[0px] mt-[30px] flex flex-col justify-center items-center bg-gray-200 border-none rounded-xl">
+          <div className="w-[500px] h-[600px] mt-[30px] flex flex-col justify-center items-center bg-gray-200 border-none rounded-xl">
             <p className="text-[400px] text-gray-300">
               <BsPersonFill />
             </p>
@@ -170,10 +170,11 @@ const Translate = () => {
         </p>
         {translate ? (
           <div className="flex flex-col ml-[30px] mt-[30px] w-[500px] h-[600px] bg-white rounded-xl border border-gray-200 shadow-md">
-            <p className="text-4xl text-black font-main p-9">{text}</p>
+            <p className="w-[500px] h-[500px] break-all text-4xl text-black font-main p-9">
+              {text}
+            </p>
             <div
-              className={`flex flex-row items-center justify-center h-[50px] ${
-                text === "" ? "mt-[460px]" : "mt-[420px]"
+              className={`flex flex-row items-center justify-center h-[50px] mt-[35px]
               }`}
             >
               <button
