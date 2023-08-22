@@ -9,7 +9,7 @@ const Plugin = () => {
   const isLogin = useRecoilValue(authState);
 
   return (
-    <div className="w-full h-[100vh] flex flex-col min-h-full">
+    <div className="flex flex-col w-full h-[100vh]">
       <Header />
       {isLogin ? <UsrOnline /> : <UsrOffline />}
       <Footer />

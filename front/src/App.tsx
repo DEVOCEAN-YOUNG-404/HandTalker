@@ -6,6 +6,7 @@ import TranslatePage from "./pages/TranslatePage/TranslatePage";
 import Plugin from "./pages/PlugIn/PlugIn";
 import Login from "./pages/Auth/Login/Login";
 import SignUp from "./pages/Auth/SIgnUp/SignUp";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/plugin" element={<Plugin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
     </RecoilRoot>
