@@ -16,15 +16,10 @@ const UsrOnline = () => {
   };
 
   return (
-    <div className="h-full min-w-[1366px] w-full flex justify-start mt-[100px] flex-col mb-[100px]">
+    <div className="h-full min-w-[1366px] w-full flex justify-center items-center mt-[100px] flex-col mb-[100px]">
       {openModal && <Modal onOpenModal={onModalAlert} />}
 
-      <div className="flex items-start justify-start">
-        <p className="h-auto text-5xl font-bold text-black font-main ml-[118px]">
-          플러그인
-        </p>
-      </div>
-      <div className="h-full flex flex-col items-start justify-start md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
+      <div className="h-full flex flex-col items-center justify-center md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
         <div className="flex flex-row h-[320px] items-center justify-center w-full mb-[50px]">
           <div className="w-[301px] h-[320px] mt-[50px] border border-[#5865F2] flex flex-col items-center justify-center rounded-xl ">
             <img
@@ -77,7 +72,7 @@ const UsrOnline = () => {
               카카오톡에서 HandTalker로 <br />
               번역한 메시지를 전송해보세요
             </p>
-            <button className="w-[230px] h-[50px] mt-[20px] text-[#381c1e] font-main text-xl border border-[#381c1e] rounded-xl hover:bg-[#FFE702] hover:border-[#FFE702] hover:text-[#381c1e] hover:drop-shadow-xl transition-colors duration-200">
+            <button className="w-[230px] h-[50px] mt-[20px] text-[#381c1e] font-main text-xl border border-[#381c1e] rounded-xl hover:bg-[#381E1F] hover:text-[#FEE800] hover:drop-shadow-xl transition-colors duration-200">
               연결하기
             </button>
           </div>

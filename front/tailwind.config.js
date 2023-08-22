@@ -21,9 +21,6 @@ module.exports = {
       dropShadow: {
         xl: "0px 0px 4px rgba(0, 0, 0, 0.35)",
       },
-      screens: {
-        "3xl": "1600px",
-      },
       variants: {
         borderColor: ["responsive", "hover", "focus", "focus-within"],
       },
