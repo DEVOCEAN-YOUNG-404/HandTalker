@@ -77,7 +77,7 @@ const UsrOnline = () => {
               카카오톡에서 HandTalker로 <br />
               번역한 메시지를 전송해보세요
             </p>
-            <button className="w-[230px] h-[50px] mt-[20px] text-[#381c1e] font-main text-xl border border-[#381c1e] rounded-xl hover:bg-[#FFE702] hover:border-[#FFE702] hover:text-[#381c1e] hover:drop-shadow-xl transition-colors duration-200">
+            <button className="w-[230px] h-[50px] mt-[20px] text-[#381c1e] font-main text-xl border border-[#381c1e] rounded-xl hover:bg-[#381E1F] hover:text-[#FEE800] hover:drop-shadow-xl transition-colors duration-200">
               연결하기
             </button>
           </div>
