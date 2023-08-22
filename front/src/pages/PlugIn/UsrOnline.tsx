@@ -16,13 +16,13 @@ const UsrOnline = () => {
   };
 
   return (
-    <div className="min-w-[1366px] h-[100vh] flex flex-row w-full">
+    <div className="min-w-[1366px] h-[1300px] flex flex-row w-full">
       {openModal && <Modal onOpenModal={onModalAlert} />}
-      <div className="w-full h-full flex items-start justify-start mt-[100px] flex-col">
-        <p className="text-5xl font-bold text-black font-main ml-[118px]">
+      <div className="w-full h-auto flex items-start justify-start mt-[100px] flex-col mb-[100px]">
+        <p className="h-auto text-5xl font-bold text-black font-main ml-[118px]">
           플러그인
         </p>
-        <div className="flex flex-row items-center justify-center w-full md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
+        <div className="flex flex-row h-[320px] items-center justify-center w-full md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
           <div className="w-[301px] h-[320px] mt-[50px] border border-[#5865F2] flex flex-col items-center justify-center rounded-xl ">
             <img
               src={discord_blue}
@@ -79,7 +79,7 @@ const UsrOnline = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center w-full md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
+        <div className="flex flex-row h-[320px] items-center justify-center w-full md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">
           <div className="w-[301px] h-[320px] mt-[50px] border border-[#E83B6F] flex flex-col items-center justify-center rounded-xl ">
             <img
               src={instagram}

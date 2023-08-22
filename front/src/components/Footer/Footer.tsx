@@ -9,8 +9,8 @@ const Footer = () => {
 
   return (
     <div
-      className={`bg-[#23A352] w-full left-0 ${
-        path === "/" ? "fixed bottom-[0px]" : "bottom-0"
+      className={`bg-[#23A352] w-full ${
+        path === "/" ? "fixed bottom-[0px]" : ""
       } h-[130px] flex flex-row items-center justify-center`}
     >
       <img src={logo} alt="logo" className="w-auto h-[130px]" />
