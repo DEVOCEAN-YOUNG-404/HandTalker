@@ -42,7 +42,7 @@ const SignUpForm = () => {
         navigate("/");
         Toast.fire({
           icon: "success",
-          title: "로그아웃 성공!",
+          title: "회원가입 성공!",
         });
       })
       .catch((error) => {
