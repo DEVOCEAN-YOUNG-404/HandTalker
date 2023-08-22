@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import discord from "../../assets/icons/discord.png";
 import { BiCopy, BiRevision } from "react-icons/bi";
 import Swal from "sweetalert2";
+import { resultText } from "../../utils/recoil/atom";
 
 interface Channel {
   id: string;
@@ -48,7 +49,7 @@ const Translate = () => {
 
   const [selectedItem, setSelectedItem] = useState<Channel | null>(null);
 
-  const [text, setText] = useState("안녕하세요");
+  const [text, setText] = useRecoilState(resultText);
 
   useEffect(() => {
     if (selectedItem) {

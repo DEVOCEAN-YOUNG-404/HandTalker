@@ -13,3 +13,8 @@ export const authState = atom({
   default: false,
   effects_UNSTABLE: [persistAtom],
 });
+
+export const resultText = atom({
+  key: "resultText",
+  default: "",
+});
