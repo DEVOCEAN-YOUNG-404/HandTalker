@@ -18,3 +18,8 @@ export const resultText = atom({
   key: "resultText",
   default: "",
 });
+
+export const dchannel = atom({
+  key: "dchannel",
+  default: "",
+});

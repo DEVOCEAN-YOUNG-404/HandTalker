@@ -1,70 +1,40 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import Input from "./Input";
-import { translateState } from "../../utils/recoil/atom";
-import { useRecoilState } from "recoil";
+import { translateState, resultText, dchannel } from "../../utils/recoil/atom";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { BsPersonFill } from "react-icons/bs";
-import { useState, Fragment } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 import discord from "../../assets/icons/discord.png";
 import { BiCopy, BiRevision } from "react-icons/bi";
 import Swal from "sweetalert2";
-import { resultText } from "../../utils/recoil/atom";
-
-interface Channel {
-  id: string;
-  name: string;
-}
-
-let channels2: Channel[] = [
-  {
-    id: "1",
-    name: "1",
-  },
-];
+import ConfigModal from "./config/ConfigModal";
 
 const Translate = () => {
-  useEffect(() => {
-    axios
-      .get("https://localhost:3002/api/discord-channels")
-      .then((response) => {
-        console.log(response.data);
-        channels2 = response.data;
-        setLoading(false);
-        setSelectedItem(response.data[0]);
-      })
-      .catch((e) => console.error(e));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    // channels2 = channels1.flat(Infinity);
-    console.log(channels2);
-  }, []);
+  const [openModal, setOpenModal] = useState(false);
+  const onModalAlert = () => {
+    setOpenModal(!openModal);
+  };
 
   const [translate, setTranslate] = useRecoilState(translateState);
-  const [loading, setLoading] = useState(true);
   const onClick = () => {
     setTranslate(true);
   };
 
-  const [selectedItem, setSelectedItem] = useState<Channel | null>(null);
-
   const [text, setText] = useRecoilState(resultText);
 
-  useEffect(() => {
-    if (selectedItem) {
-      console.log(selectedItem.id);
-    }
-  }, [selectedItem]);
+  const channel = useRecoilValue(dchannel);
 
   const SendMessage = () => {
-    axios
-      .post("https://localhost:3002/api/send_message", {
-        message: text,
-        CHANNEL_ID: selectedItem?.id,
-      })
-      .then((response) => console.log(response.data))
-      .catch((e) => console.error(e));
+    if (!(channel === "")) {
+      axios
+        .post("https://localhost:3002/api/send_message", {
+          message: text,
+          CHANNEL_ID: channel,
+        })
+        .then((response) => console.log(response.data))
+        .catch((e) => console.error(e));
+    }
   };
 
   const copyToClipboardHandler = async (text: string) => {
@@ -97,64 +67,13 @@ const Translate = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full mx-auto mt-14 lg:scale-90 xl:scale-100">
-      {loading ? (
-        <div className="w-48 h-12 scale-125 items-end justify-end ml-[56rem]">
-          <div className="relative mt-[20px] w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default sm:text-sm">
-            loading...
-          </div>
-        </div>
-      ) : (
-        <div className="w-48 h-12 scale-125 items-end justify-end ml-[56rem]">
-          <Listbox value={selectedItem} onChange={setSelectedItem}>
-            <div className="mt-5">
-              <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-green-300 sm:text-sm">
-                <span className="block truncate">{selectedItem!.name}</span>
-                <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <ChevronUpDownIcon
-                    className="w-5 h-5 text-gray-400"
-                    aria-hidden="true"
-                  />
-                </span>
-              </Listbox.Button>
-              <Transition
-                as={Fragment}
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                  {channels2.map((item, itemIdx) => (
-                    <Listbox.Option
-                      key={itemIdx}
-                      className={({ active }) =>
-                        `relative cursor-default select-none py-2 pl-3 pr-4 ${
-                          active
-                            ? "bg-green-100 text-green-900"
-                            : "text-gray-900"
-                        }`
-                      }
-                      value={item}
-                    >
-                      {({ selected }) => (
-                        <>
-                          <span
-                            className={`block truncate ${
-                              selected ? "font-medium" : "font-normal"
-                            }`}
-                          >
-                            {item.name}
-                          </span>
-                        </>
-                      )}
-                    </Listbox.Option>
-                  ))}
-                </Listbox.Options>
-              </Transition>
-            </div>
-          </Listbox>
-        </div>
-      )}
-
+      {openModal && <ConfigModal onOpenModal={onModalAlert} />}
+      <button
+        onClick={onModalAlert}
+        className="cursor-pointer mb-[-20px] w-[10rem] h-12 font-main text-xl font-bold items-end justify-end ml-[61rem] text-white bg-main-2 rounded-lg"
+      >
+        연동 설정
+      </button>
       <div className="flex flex-row items-center justify-center">
         {translate ? (
           <Input />
