@@ -70,15 +70,15 @@ const Translate = () => {
       {openModal && <ConfigModal onOpenModal={onModalAlert} />}
       <button
         onClick={onModalAlert}
-        className="cursor-pointer mb-[-20px] w-[10rem] h-12 font-main text-xl font-bold items-end justify-end ml-[61rem] text-white bg-main-2 rounded-lg"
+        className="w-[10rem] h-12 font-main text-xl font-bold items-end justify-end ml-[61rem] text-white bg-main-2 rounded-lg"
       >
         연동 설정
       </button>
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex flex-row items-center justify-center mt-2">
         {translate ? (
           <Input />
         ) : (
-          <div className="flex flex-col items-center justify-center px-12 py-24 mt-8 bg-gray-200 border-none rounded-xl">
+          <div className="flex flex-col items-center justify-center px-12 h-[600px] bg-gray-200 border-none rounded-xl">
             <p className="text-[400px] text-gray-300">
               <BsPersonFill />
             </p>
@@ -88,7 +88,7 @@ const Translate = () => {
           <FaArrowRightLong />
         </p>
         {translate ? (
-          <div className="flex flex-col ml-[30px] mt-[30px] w-[31.25rem] h-[37.5rem] md:w-2/3 bg-white rounded-xl border border-gray-200 shadow-md">
+          <div className="flex flex-col ml-[30px] w-[31.25rem] h-[37.5rem] md:w-2/3 bg-white rounded-xl border border-gray-200 shadow-md">
             <p className="w-[31.25rem] h-[31.25rem] break-all text-4xl text-black font-main p-9">
               {text}
             </p>
@@ -125,7 +125,7 @@ const Translate = () => {
           </div>
         ) : (
           <div>
-            <div className="p-9 ml-[40px] mt-[30px] w-[31.25rem] h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
+            <div className="p-9 ml-[40px] w-[31.25rem] h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
               <p className="text-3xl font-bold leading-normal text-black font-main">
                 번역을 시작하려면 <br />
                 아래 버튼을 눌러주세요. <br />

@@ -156,7 +156,7 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
             ref={modalRef}
             className="container w-[42rem] h-[28rem] flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg"
           >
-            <ConfigSuccess />
+            <ConfigSuccess onModalAlert={onOpenModal} />
           </div>
         ) : (
           <div
@@ -166,7 +166,7 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
             <p className="text-3xl font-bold text-black font-main">
               설정할 플랫폼을 선택해주세요
             </p>
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-row items-center justify-center mt-6 mb-6">
               <div
                 className={`items-end justify-end w-48 h-12 mt-10 ${
                   selectedItem!.name === "Discord" ? "mr-5" : ""
@@ -240,13 +240,13 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
               </div>
               {selectedItem!.name === "Discord" ? (
                 loading ? (
-                  <div className="items-end justify-end w-48 h-12 mt-10 scale-100">
-                    <div className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default sm:text-sm">
+                  <div className="w-48 h-12 mt-14">
+                    <p className="py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md sm:text-sm">
                       loading...
-                    </div>
+                    </p>
                   </div>
                 ) : (
-                  <div className="items-end justify-end w-48 h-12 mt-10 scale-100">
+                  <div className="w-48 h-12 mt-10">
                     <Listbox
                       value={selectedChannel}
                       onChange={setSelectedChannel}
