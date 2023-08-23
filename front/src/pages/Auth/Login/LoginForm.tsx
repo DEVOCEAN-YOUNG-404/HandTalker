@@ -6,11 +6,14 @@ import { useSetRecoilState } from "recoil";
 import { authState } from "../../../utils/recoil/atom";
 import Swal from "sweetalert2";
 import { LoginFormData } from "../../../types/LoginFormData";
+import { useState } from "react";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const login = useSetRecoilState(authState);
   const auth = getAuth();
+  const [emailError, setEmailError] = useState<string>("");
+  const [pwError, setPwError] = useState<string>("");
 
   const Toast = Swal.mixin({
     toast: true,
@@ -31,7 +34,7 @@ const LoginForm = () => {
   } = useForm<LoginFormData>();
 
   const loginHandler = (data: LoginFormData) => {
-    console.log(data.email, data.password);
+    // console.log(data.email, data.password);
 
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
@@ -46,8 +49,15 @@ const LoginForm = () => {
         });
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
+        const errorCode = error.code;
+        console.log(errorCode);
+
+        if (errorCode === "auth/wrong-password") {
+          setPwError("비밀번호가 일치하지 않습니다");
+        }
+        if (errorCode === "auth/user-not-found") {
+          setEmailError("존재하지 않는 이메일입니다");
+        }
       });
   };
 
@@ -69,7 +79,7 @@ const LoginForm = () => {
             render={({ field }) => (
               <div
                 className={`outline mb-3 ${
-                  errors.email ? "border-red-500" : ""
+                  errors.email || emailError ? "border-red-500" : ""
                 } flex items-center relative w-[310px] h-[48px] transition-colors duration-300 border border-gray-300 px-2 rounded-lg focus-within:border-main-2 outline-none`}
               >
                 <input
@@ -89,10 +99,10 @@ const LoginForm = () => {
           />
           <p
             className={`${
-              errors.email ? "mt-[-7px]" : ""
+              errors.email || emailError ? "mt-[-7px]" : ""
             } text-xs text-red-500 font-main`}
           >
-            {errors.email?.message}
+            {errors.email?.message || emailError}
           </p>
         </div>
         <div className="mb-3 outline-none">
@@ -109,7 +119,7 @@ const LoginForm = () => {
             render={({ field }) => (
               <div
                 className={`outline mb-3 ${
-                  errors.password ? "border-red-500" : ""
+                  errors.password || pwError ? "border-red-500" : ""
                 } flex items-center relative w-[310px] h-[48px] transition-colors duration-300 border border-gray-300 px-2 rounded-lg focus-within:border-main-2 outline-none`}
               >
                 <input
@@ -129,10 +139,10 @@ const LoginForm = () => {
           />
           <p
             className={`${
-              errors.password ? "mt-[-7px]" : ""
+              errors.password || pwError ? "mt-[-7px]" : ""
             } text-xs text-red-500 font-main`}
           >
-            {errors.password?.message}
+            {errors.password?.message || pwError}
           </p>
         </div>
         <button

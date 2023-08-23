@@ -5,11 +5,13 @@ import { authState } from "../../../utils/recoil/atom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { SignUpFormData } from "../../../types/SignUpFormData";
+import { useState } from "react";
 
 const SignUpForm = () => {
   const auth = getAuth();
   const signup = useSetRecoilState(authState);
   const navigate = useNavigate();
+  const [emailError, setEmailError] = useState<string>("");
 
   const Toast = Swal.mixin({
     toast: true,
@@ -46,8 +48,12 @@ const SignUpForm = () => {
         });
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
+        const errorCode = error.code;
+        console.log(errorCode);
+
+        if (errorCode === "auth/email-already-in-use") {
+          setEmailError("이미 사용 중인 이메일입니다");
+        }
       });
   };
 
@@ -69,7 +75,7 @@ const SignUpForm = () => {
             render={({ field }) => (
               <div
                 className={`outline mb-3 ${
-                  errors.email ? "border-red-500" : ""
+                  errors.email || emailError ? "border-red-500" : ""
                 } flex items-center relative w-[310px] h-[48px] transition-colors duration-300 border border-gray-300 px-2 rounded-lg focus-within:border-main-2 outline-none`}
               >
                 <input
@@ -89,10 +95,10 @@ const SignUpForm = () => {
           />
           <p
             className={`${
-              errors.email ? "mt-[-7px]" : ""
+              errors.email || emailError ? "mt-[-7px]" : ""
             } text-xs text-red-500 font-main`}
           >
-            {errors.email?.message}
+            {errors.email?.message || emailError}
           </p>
         </div>
         <div className="mb-3 outline-none">
