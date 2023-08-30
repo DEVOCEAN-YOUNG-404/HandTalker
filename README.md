@@ -13,3 +13,5 @@
 # ⚙️ 작동 구조
 <img width="900" alt="image" src="https://github.com/DEVOCEAN-YOUNG-404/HandTalker/assets/80333011/64b9e64f-ca09-46e6-88f0-7fbc098d7447">
 
+# 📖 발표 자료
+<a href="https://docs.google.com/presentation/d/1zxhBP0la6rXaL4hCes9wswxXGhWNuNPu/edit?usp=sharing&ouid=104296432684225740585&rtpof=true&sd=true" target="_blank" rel="noreferrer">바로 가기</a>
