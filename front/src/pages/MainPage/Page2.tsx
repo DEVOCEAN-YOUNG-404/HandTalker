@@ -5,12 +5,17 @@ const Page2 = () => {
   return (
     <div
       id="section2"
-      className="ml-[400px] w-full mr-[400px] h-[100vh] flex flex-row items-center justify-start"
+      className="w-full h-[100vh] flex flex-row items-center justify-start space-x-20 pr-20"
     >
-      <img src={main2} alt="main2" className="block w-[550px]" />
-      <div className="w-[650px] flex flex-col items-start justify-start ml-[80px]">
-        <div className="flex flex-row items-center justify-center">
-          <img src={logo} alt="logo" className="block w-[250px] " />
+      <img
+        src={main2}
+        alt="main2"
+        className="w-auto max-w-full md:h-[23rem] lg:h-[27rem] xl:h-[30rem] block"
+      />
+
+      <div className="min-w-[25rem] md:w-[28rem] lg:w-[35rem] xl:w-[43rem] flex flex-col">
+        <div className="flex flex-row items-center justify-start">
+          <img src={logo} alt="logo" className="block w-auto h-[2rem]" />
           <p className="text-4xl font-bold text-black font-main ml-[15px]">
             소개
           </p>

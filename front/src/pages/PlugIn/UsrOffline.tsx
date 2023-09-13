@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const UsrOffline = () => {
   return (
-    <div className="min-w-[1366px] h-[100vh] flex flex-col">
-      <div className="w-full h-full mr-[400px] flex mt-[100px] flex-col pb-[20px]">
-        <p className="ml-[118px] text-5xl font-bold text-black font-main">
+    <div className="w-full h-[100vh] flex flex-col">
+      <div className="w-full h-full flex mt-[100px] flex-col pb-[20px]">
+        <p className="md:ml-[6rem] lg:ml-[8rem] xl:ml-[10rem] text-5xl font-bold text-black font-main">
           플러그인
         </p>
         <div className="flex flex-row items-center justify-center">
           <img
             src={plugin1}
             alt="디스코드 연동 예시 이미지"
-            className="w-[650px]"
+            className="md:w-[30rem] lg:w-[35rem] xl:w-[40rem]"
           />
           <div className="flex flex-col items-start justify-center ml-[50px] h-full">
             <p className="text-4xl font-bold leading-normal font-main">

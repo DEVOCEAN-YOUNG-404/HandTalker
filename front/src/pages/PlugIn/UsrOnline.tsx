@@ -16,7 +16,7 @@ const UsrOnline = () => {
   };
 
   return (
-    <div className="h-full min-w-[1366px] w-full flex justify-center items-center mt-[100px] flex-col mb-[100px]">
+    <div className="flex flex-col items-center justify-center w-full h-full my-10">
       {openModal && <Modal onOpenModal={onModalAlert} />}
 
       <div className="h-full flex flex-col items-center justify-center md:scale-75 xl:scale-[85%] 2xl:scale-90 3xl:scale-100">

@@ -33,18 +33,14 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[72px] border-b border-gray border-opacity-70 flex flex-row justify-start items-center">
-      <div className="flex-1">
+    <div className="bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[4.5rem] border-b border-gray border-opacity-70 flex flex-row justify-between items-center">
+      <div className="ml-[10rem]">
         <Link to="/">
-          <img
-            src={logo}
-            alt="logo"
-            className="w-auto h-[24px] ml-[120px] flex-1"
-          />
+          <img src={logo} alt="logo" className="w-[11.7rem] h-6" />
         </Link>
       </div>
 
-      <div className="flex flex-row items-center justify-center ml-[40vw] flex-1 h-full">
+      <div className="flex flex-row items-center justify-center h-full mr-[10vw]">
         <HeaderButton
           isClicked={path === "/" ? true : false}
           name="메인"
@@ -62,7 +58,7 @@ const Header = () => {
         />
         {auth ? (
           <div
-            className={`w-[80px]
+            className={`w-20
        h-full font-main text-base text-black flex flex-col justify-center items-center cursor-pointer`}
             onClick={logoutHandler}
           >
