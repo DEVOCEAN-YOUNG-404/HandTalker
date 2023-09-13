@@ -1,10 +1,10 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import Translate from "./Translate";
+import Translate from "./translate/Translate";
 
 const TranslatePage = () => {
   return (
-    <div className="w-full h-[100vh] flex flex-col">
+    <div className="flex flex-col h-auto min-h-full">
       <Header />
       <Translate />
       <Footer />

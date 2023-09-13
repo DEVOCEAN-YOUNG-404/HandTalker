@@ -6,9 +6,9 @@ const Page1 = () => {
   return (
     <div
       id="section1"
-      className="h-[100vh] flex flex-row items-center justify-center"
+      className="h-[100vh] flex flex-row items-center justify-center w-full"
     >
-      <div className="flex flex-col items-start justify-start mt-[60px]">
+      <div className="flex flex-col items-start justify-start mt-16">
         <p className="font-bold text-black text-[2rem] mb-[10px] font-main">
           내 손 안의 작은 수어 통역가
         </p>
@@ -26,7 +26,7 @@ const Page1 = () => {
       <img
         src={main}
         alt="main"
-        className="block w-[600px] ml-[120px] mt-[60px]"
+        className="block w-auto md:h-[17rem] lg:h-[20rem] 2xl:h-[25rem] ml-[120px] mt-[60px]"
       />
     </div>
   );

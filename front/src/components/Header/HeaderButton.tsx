@@ -12,7 +12,7 @@ const HeaderButton = ({ isClicked, name, link }: HeaderButtonProps) => {
   if (isClicked) {
     return (
       <div
-        className={`w-[80px] border-b-2 border-icon font-bold 
+        className={`w-20 border-b-2 border-icon font-bold 
        mb-[-3px] h-full font-main text-base text-icon flex flex-col justify-center items-center`}
         onClick={onClickListener}
       >
@@ -24,7 +24,7 @@ const HeaderButton = ({ isClicked, name, link }: HeaderButtonProps) => {
   } else {
     return (
       <div
-        className={`w-[80px] 
+        className={`w-20 
        h-full font-main text-base text-black flex flex-col justify-center items-center`}
         onClick={onClickListener}
       >
