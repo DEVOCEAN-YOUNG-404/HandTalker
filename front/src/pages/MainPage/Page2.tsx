@@ -5,18 +5,21 @@ const Page2 = () => {
   return (
     <div
       id="section2"
-      className="w-full h-[100vh] flex flex-row items-center justify-start space-x-20 pr-20"
+      className="w-full h-[100vh] flex flex-row items-center justify-start md:space-x-20 px-10 md:pr-20"
     >
       <img
         src={main2}
         alt="main2"
-        className="w-auto max-w-full md:h-[23rem] lg:h-[27rem] xl:h-[30rem] block"
+        className="hidden md:block w-auto max-w-full md:h-[23rem] lg:h-[27rem] xl:h-[30rem]"
       />
-
-      <div className="min-w-[25rem] md:w-[28rem] lg:w-[35rem] xl:w-[43rem] flex flex-col">
+      <div className="md:min-w-[26rem] md:w-[28rem] lg:w-[35rem] xl:w-[43rem] flex flex-col">
         <div className="flex flex-row items-center justify-start">
-          <img src={logo} alt="logo" className="block w-auto h-[2rem]" />
-          <p className="text-4xl font-bold text-black font-main ml-[15px]">
+          <img
+            src={logo}
+            alt="logo"
+            className="block w-auto h-[1.6rem] md:h-[2rem]"
+          />
+          <p className="text-3xl md:text-4xl font-bold text-black font-main ml-[15px]">
             소개
           </p>
         </div>
@@ -24,7 +27,7 @@ const Page2 = () => {
           HandTalker는 인공지능 기반의 혁신적인 기술을 기반으로 수어를 신속하고
           정확하게 인식하여 한국어로 번역해주는 탁월한 서비스입니다.
         </p>
-        <p className="text-base text-gray-400 font-main mt-[15px] leading-8">
+        <p className="hidden md:block text-base text-gray-400 font-main mt-[15px] leading-8">
           일상 생활, 회사 업무 뿐만 아니라 가족 구성원 내에 농인 자녀를 두고
           계신 가정에서 소통의 어려움을 해결하기 위해 개발되었으며, 그 뿐만
           아니라 후천적으로 농인이 된 분들을 위한 실습 교육 자료로도 활용되고

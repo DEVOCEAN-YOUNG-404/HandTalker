@@ -81,11 +81,11 @@ const Translate = () => {
   });
 
   return (
-    <div className="pt-[7rem] flex flex-col items-center justify-start w-full md:h-[45rem] xl:h-[50rem] mx-auto mb-[4rem]">
+    <div className="mt-[7rem] flex flex-col items-center justify-start w-full h-full mx-auto mb-[4rem]">
       {openModal && <ConfigModal onOpenModal={onModalAlert} />}
       <button
         onClick={onModalAlert}
-        className="w-[160px] h-[48px] font-main text-xl font-bold items-end justify-end md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
+        className="w-[160px] h-[3rem] font-main text-xl font-bold items-end justify-end md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
       >
         연동 설정
       </button>
