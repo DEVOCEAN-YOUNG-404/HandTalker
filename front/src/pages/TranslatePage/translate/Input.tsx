@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
-import { css } from "@emotion/css";
 import { Camera } from "@mediapipe/camera_utils";
 import { Hands, Results } from "@mediapipe/hands";
 import { drawCanvas } from "../../../utils/translate/drawCanvas";
@@ -142,25 +141,6 @@ const Input = () => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: css`
-    position: relative;
-    width: 31.25rem;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-  `,
-  canvas: css`
-    position: absolute;
-    width: 31.25rem;
-    height: 37.5rem;
-    background-color: #fff;
-  `,
 };
 
 export default Input;

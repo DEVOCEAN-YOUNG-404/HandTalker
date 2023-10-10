@@ -6,13 +6,14 @@ import {
   dchannel,
 } from "../../../utils/recoil/atom";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import discord from "../../../assets/icons/discord.png";
 import { BiCopy, BiRevision } from "react-icons/bi";
 import Swal from "sweetalert2";
 import ConfigModal from "../config/ConfigModal";
 import { NotTranslating } from "./NotTranslating";
+import Webcam from "react-webcam";
 
 const Translate = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -24,6 +25,16 @@ const Translate = () => {
   const onClick = () => {
     setTranslate(true);
   };
+
+  const webcamRef = useRef<Webcam>(null);
+  useEffect(() => {
+    if (webcamRef.current?.video) {
+      const stream = webcamRef.current?.video.srcObject as MediaStream;
+      const tracks = stream.getTracks();
+      tracks.forEach((track) => track.stop());
+      webcamRef.current.video.srcObject = null;
+    }
+  }, [translate]);
 
   const [text, setText] = useRecoilState(resultText);
 
@@ -70,11 +81,11 @@ const Translate = () => {
   });
 
   return (
-    <div className="pt-[7rem] flex flex-col items-center justify-start w-full md:h-[45rem] xl:h-[50rem] mx-auto mb-[4rem]">
+    <div className="mt-[7rem] flex flex-col items-center justify-start w-full h-full mx-auto mb-[4rem]">
       {openModal && <ConfigModal onOpenModal={onModalAlert} />}
       <button
         onClick={onModalAlert}
-        className="w-[160px] h-[48px] font-main text-xl font-bold items-end justify-end md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
+        className="w-[160px] h-[3rem] font-main text-xl font-bold items-end justify-end md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
       >
         연동 설정
       </button>

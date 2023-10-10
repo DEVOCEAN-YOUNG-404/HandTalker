@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 
 const UsrOffline = () => {
   return (
-    <div className="w-full h-[100vh] flex flex-col">
+    <div className="w-full h-[100vh] flex flex-col px-10">
       <div className="w-full h-full flex mt-[100px] flex-col pb-[20px]">
-        <p className="md:ml-[6rem] lg:ml-[8rem] xl:ml-[10rem] text-5xl font-bold text-black font-main">
-          플러그인
-        </p>
         <div className="flex flex-row items-center justify-center">
           <img
             src={plugin1}
