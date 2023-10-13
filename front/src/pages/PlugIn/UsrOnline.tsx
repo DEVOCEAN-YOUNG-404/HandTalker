@@ -86,7 +86,7 @@ const UsrOnline = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row h-[320px] items-center justify-center w-full">
-          <div className="flex flex-row items-center justify-center md:flex-col">
+          <div className="flex flex-row items-center justify-center">
             <div className="w-[140px] h-[140px] md:w-[301px] md:h-[320px] md:mt-[50px] border border-[#E83B6F] flex flex-col items-center justify-center rounded-xl ">
               <img
                 src={instagram}
@@ -116,7 +116,7 @@ const UsrOnline = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-center md:flex-col">
+          <div className="flex flex-row items-center justify-center">
             <div className="w-[140px] h-[140px] md:w-[301px] md:h-[320px] mt-8 md:mt-[50px] md:ml-[50px] border border-[#4A98EA] flex flex-col items-center justify-center rounded-xl ">
               <img
                 src={twitter}
