@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ModalPortal } from "../../../utils/helpers/ModalPortal";
-import { GrClose, GrNext, GrPrevious } from "react-icons/gr";
+import { GrNext, GrPrevious } from "react-icons/gr";
 import MPage1 from "./MPage1";
 import MPage2 from "./MPage2";
 import MPage3 from "./MPage3";
@@ -44,11 +44,11 @@ const Modal = ({ onOpenModal }: ModalProps) => {
       <div className="fixed top-0 left-0 flex items-center justify-center w-full h-screen bg-black bg-opacity-70">
         <div
           ref={modalRef}
-          className="container w-[850px] h-[600px] flex flex-col items-center justify-center bg-white border-none rounded-3xl"
+          className="container w-[22rem] h-[30rem] md:w-[850px] md:h-[600px] flex flex-col items-center justify-center bg-white border-none rounded-3xl"
         >
-          <div className="flex flex-row items-center mt-[20px]">
+          <div className="flex flex-row items-center md:mt-[20px]">
             <button onClick={prevPage}>
-              <p className="text-4xl text-gray-500 opacity-60">
+              <p className="text-3xl text-gray-500 md:text-4xl opacity-60">
                 <GrPrevious />
               </p>
             </button>
@@ -56,7 +56,7 @@ const Modal = ({ onOpenModal }: ModalProps) => {
             {currentPage === 2 && <MPage2 />}
             {currentPage === 3 && <MPage3 />}
             <button onClick={nextPage}>
-              <p className="text-4xl text-gray-500 opacity-60">
+              <p className="text-3xl text-gray-500 md:text-4xl opacity-60">
                 <GrNext />
               </p>
             </button>
