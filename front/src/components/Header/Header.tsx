@@ -36,7 +36,9 @@ const Header = () => {
   return (
     <div>
       <div className="px-6 flex lg:hidden bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[3.1rem] border-b border-gray border-opacity-70 flex-row justify-between items-center">
-        <img src={logo} alt="logo" className="inline w-auto h-5" />
+        <Link to="/">
+          <img src={logo} alt="logo" className="inline w-auto h-5" />
+        </Link>
         <img src={menu} alt="menu" className="inline" />
       </div>
       <div className="hidden lg:flex bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[4.5rem] border-b border-gray border-opacity-70 flex-row justify-between items-center">

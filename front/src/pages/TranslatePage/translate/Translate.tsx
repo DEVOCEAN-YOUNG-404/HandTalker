@@ -134,6 +134,8 @@ const Translate = () => {
           <div className="mt-3 md:mt-0 p-5 md:p-9 md:ml-[40px] w-[20rem] h-[13rem] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
             <p className="text-2xl font-bold leading-normal text-black md:text-3xl font-main">
               번역을 시작하려면 <br />
+            </p>
+            <p className="mt-0 text-2xl font-bold leading-normal text-black md:text-3xl font-main md:mt-2">
               아래 버튼을 눌러주세요. <br />
             </p>
             <button
