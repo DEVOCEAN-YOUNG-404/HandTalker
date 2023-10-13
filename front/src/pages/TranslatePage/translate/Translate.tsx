@@ -81,69 +81,67 @@ const Translate = () => {
   });
 
   return (
-    <div className="mt-[7rem] flex flex-col items-center justify-start w-full h-full mx-auto mb-[4rem]">
+    <div className="mt-[5rem] md:mt-[7rem] flex flex-col items-center justify-start w-full h-full mx-auto mb-[4rem]">
       {openModal && <ConfigModal onOpenModal={onModalAlert} />}
       <button
         onClick={onModalAlert}
-        className="w-[160px] h-[3rem] font-main text-xl font-bold items-end justify-end md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
+        className="w-[8rem] h-[2.5rem] md:w-[160px] md:h-[3rem] font-main text-xl font-bold items-end justify-end ml-[12rem] md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
       >
         연동 설정
       </button>
-      <div className="flex flex-row items-center justify-center mt-2">
+      <div className="flex flex-col items-center justify-center mt-2 md:flex-row">
         {translate ? <Input /> : <NotTranslating />}
-        <p className="ml-[40px] text-6xl text-gray-200">
+        <p className="hidden md:block ml-[40px] text-6xl text-gray-200">
           <FaArrowRightLong />
         </p>
         {translate ? (
-          <div className="flex flex-col ml-[40px] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
-            <p className="w-[31.25rem] md:h-[30rem] xl:h-[31.25rem] break-all text-4xl text-black font-main p-9">
+          <div className="mt-3 md:mt-0 flex flex-col md:ml-[40px] w-[20rem] h-[13rem] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
+            <p className="w-[20rem] h-[9.5rem] md:w-[31.25rem] md:h-[30rem] xl:h-[31.25rem] break-all overflow-scroll text-2xl md:text-4xl text-black font-main p-5 md:p-9">
               {text}
             </p>
             <div
-              className={`flex flex-row items-center justify-center h-[50px] md:mb-[10px] xl:mt-[35px]
+              className={`flex flex-row items-center justify-end md:justify-center mr-2 md:mr-0 h-[50px] md:mb-[10px] xl:mt-[35px]
               }`}
             >
               <button
                 onClick={() => {
                   copyToClipboardHandler(text);
                 }}
-                className="text-4xl text-gray-300 mr-[15px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer"
+                className="text-2xl md:text-4xl text-gray-300 mr-[15px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer"
               >
                 <BiCopy />
               </button>
               <button
                 onClick={textClearHandler}
-                className="text-4xl text-gray-300 md:mr-[30px] xl:mr-[75px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer"
+                className="text-2xl md:text-4xl text-gray-300 md:mr-[30px] xl:mr-[75px] hover:bg-gray-200 hover:bg-opacity-30 rounded-full cursor-pointer"
               >
                 <BiRevision />
               </button>
               <button
                 onClick={SendMessage}
-                className="flex flex-row justify-center items-center rounded-xl min-w-[16rem] md:w-[16rem] xl:w-[18.75rem] md:h-[3rem] xl:h-[3.2rem] bg-[#5865f2] text-white font-main text-xl"
+                className="ml-4 md:ml-0 flex flex-row justify-center items-center rounded-xl md:min-w-[16rem] w-[11rem] h-[2.7rem] md:w-[16rem] xl:w-[18.75rem] md:h-[3rem] xl:h-[3.2rem] bg-[#5865f2] text-white font-main text-xl"
               >
                 <img
                   src={discord}
                   alt="discord"
-                  className="md:w-[40px] xl:w-[50px] mr-[5px]"
+                  className="w-[30px] md:w-[40px] xl:w-[50px] mr-[5px]"
                 />
                 디스코드로 전송
               </button>
             </div>
           </div>
         ) : (
-          <div>
-            <div className="p-9 ml-[40px] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
-              <p className="text-3xl font-bold leading-normal text-black font-main">
-                번역을 시작하려면 <br />
-                아래 버튼을 눌러주세요. <br />
-              </p>
-              <button
-                onClick={onClick}
-                className="w-[140px] h-[55px] mt-[30px] rounded-xl font-bold font-main text-xl text-white bg-main-2"
-              >
-                시작하기
-              </button>
-            </div>
+          <div className="mt-3 md:mt-0 p-5 md:p-9 md:ml-[40px] w-[20rem] h-[13rem] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white rounded-xl border border-gray-200 shadow-md">
+            <p className="text-2xl font-bold leading-normal text-black md:text-3xl font-main">
+              번역을 시작하려면 <br />
+              아래 버튼을 눌러주세요. <br />
+            </p>
+            <button
+              onClick={onClick}
+              className="w-[7rem] h-[2.7rem] md:w-[8.75rem] md:h-[3rem] mt-[30px] rounded-xl font-bold font-main text-xl text-white bg-main-2"
+            >
+              시작하기
+            </button>
           </div>
         )}
       </div>

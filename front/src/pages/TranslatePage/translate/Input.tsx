@@ -112,11 +112,11 @@ const Input = () => {
   return (
     <div className="">
       {loading && (
-        <div className="z-10 absolute md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+        <div className="z-10 absolute w-[20rem] h-[20rem] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
           로딩 중...
         </div>
       )}
-      <div className="relative md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] overflow-hidden flex flex-col items-center justify-center rounded-[15px]">
+      <div className="relative w-[20rem] h-[20rem] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] overflow-hidden flex flex-col items-center justify-center rounded-[15px]">
         {/* 비디오 캡쳐 */}
         <div>
           <Webcam
@@ -134,7 +134,7 @@ const Input = () => {
         {/* 랜드마크를 손에 표시 */}
         <canvas
           ref={canvasRef}
-          className="absolute md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white"
+          className="absolute w-[20rem] h-[20rem] md:w-[25rem] xl:w-[31.25rem] md:h-[31.25rem] xl:h-[37.5rem] bg-white"
           width={500}
           height={600}
         />

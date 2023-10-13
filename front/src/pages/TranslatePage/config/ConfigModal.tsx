@@ -154,26 +154,26 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
         {success ? (
           <div
             ref={modalRef}
-            className="container w-[42rem] h-[28rem] flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg"
+            className="container w-[22rem] h-[18rem] md:w-[42rem] md:h-[28rem] flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg"
           >
             <ConfigSuccess onModalAlert={onOpenModal} />
           </div>
         ) : (
           <div
             ref={modalRef}
-            className="container w-[42rem] h-[28rem] flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg"
+            className="container w-[22rem] h-[18rem] md:w-[42rem] md:h-[28rem] flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg"
           >
-            <p className="text-3xl font-bold text-black font-main">
+            <p className="text-2xl font-bold text-black md:text-3xl font-main">
               설정할 플랫폼을 선택해주세요
             </p>
-            <div className="flex flex-row items-center justify-center mt-6 mb-6">
+            <div className="flex flex-col items-center justify-center md:mt-6 md:mb-6 md:flex-row">
               <div
-                className={`items-end justify-end w-48 h-12 mt-10 ${
-                  selectedItem!.name === "Discord" ? "mr-5" : ""
+                className={`items-end justify-end w-48 h-12 md:mt-10 ${
+                  selectedItem!.name === "Discord" ? "mr-0 md:mr-5" : ""
                 } scale-100`}
               >
                 <Listbox value={selectedItem} onChange={setSelectedItem}>
-                  <div className="mt-2">
+                  <div className="mt-4 md:mt-2">
                     <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-green-300 sm:text-sm">
                       {selectedItem && (
                         <span className="flex flex-row truncate">
@@ -240,13 +240,13 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
               </div>
               {selectedItem!.name === "Discord" ? (
                 loading ? (
-                  <div className="w-48 h-12 mt-14">
+                  <div className="w-48 h-12 mt-8 md:mt-14">
                     <p className="py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md sm:text-sm">
                       loading...
                     </p>
                   </div>
                 ) : (
-                  <div className="w-48 h-12 mt-10">
+                  <div className="w-48 h-12 mt-8 md:mt-14">
                     <Listbox
                       value={selectedChannel}
                       onChange={setSelectedChannel}
