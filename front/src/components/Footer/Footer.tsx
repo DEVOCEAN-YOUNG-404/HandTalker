@@ -1,6 +1,6 @@
-import logo from "../../assets/icons/handtalker.png";
+import logo from "../../assets/icons/handtalker.webp";
 import { AiFillGithub } from "react-icons/ai";
-import devocean from "../../assets/icons/footer_devocean.png";
+import devocean from "../../assets/icons/footer_devocean.webp";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {

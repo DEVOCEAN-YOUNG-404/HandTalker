@@ -1,5 +1,5 @@
-import logo from "../../assets/icons/logo.png";
-import main from "../../assets/images/main.png";
+import logo from "../../assets/icons/logo.svg";
+import main from "../../assets/images/main.webp";
 import { Link } from "react-router-dom";
 
 const Page1 = () => {

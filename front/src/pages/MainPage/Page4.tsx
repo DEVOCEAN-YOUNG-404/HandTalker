@@ -1,7 +1,7 @@
-import logo from "../../assets/icons/logo.png";
-import discord from "../../assets/icons/discord.png";
-import slack from "../../assets/icons/slack.png";
-import kakaotalk from "../../assets/icons/kakaotalk.png";
+import logo from "../../assets/icons/logo.svg";
+import discord from "../../assets/icons/discord.webp";
+import slack from "../../assets/icons/slack.webp";
+import kakaotalk from "../../assets/icons/kakaotalk.webp";
 
 const Page4 = () => {
   return (

@@ -1,8 +1,8 @@
-import logo from "../../assets/icons/logo.png";
-import seungjun from "../../assets/images/seungjun.jpeg";
-import sujin from "../../assets/images/sujin.jpeg";
-import hyeonbin from "../../assets/images/hyeonbin.png";
-import bokyeong from "../../assets/images/bokyeong.jpeg";
+import logo from "../../assets/icons/logo.svg";
+import seungjun from "../../assets/images/seungjun.webp";
+import sujin from "../../assets/images/sujin.webp";
+import hyeonbin from "../../assets/images/hyeonbin.webp";
+import bokyeong from "../../assets/images/bokyeong.webp";
 import { AiFillGithub } from "react-icons/ai";
 
 const Page5 = () => {

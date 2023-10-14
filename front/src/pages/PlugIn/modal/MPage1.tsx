@@ -1,4 +1,4 @@
-import discord from "../../../assets/images/discord_screenshot.png";
+import discord from "../../../assets/images/discord_screenshot.webp";
 
 const MPage1 = () => {
   return (

@@ -8,7 +8,7 @@ import {
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import discord from "../../../assets/icons/discord.png";
+import discord from "../../../assets/icons/discord.webp";
 import { BiCopy, BiRevision } from "react-icons/bi";
 import Swal from "sweetalert2";
 import ConfigModal from "../config/ConfigModal";
