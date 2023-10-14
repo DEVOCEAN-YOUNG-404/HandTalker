@@ -6,11 +6,18 @@ import { useRecoilState } from "recoil";
 import { authState } from "../../utils/recoil/atom";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useState } from "react";
+import { Drawer } from "../Drawer/Drawer";
 
 const Header = () => {
   const location = useLocation();
   const path = location.pathname;
   const [auth, setAuth] = useRecoilState(authState);
+
+  const [open, setOpen] = useState(false);
+  const openHandler = () => {
+    setOpen(!open);
+  };
 
   const Toast = Swal.mixin({
     toast: true,
@@ -34,12 +41,15 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <>
+      {open && <Drawer onOpen={openHandler} isOpen={open} />}
       <div className="px-6 flex lg:hidden bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[3.1rem] border-b border-gray border-opacity-70 flex-row justify-between items-center">
         <Link to="/">
           <img src={logo} alt="logo" className="inline w-auto h-5" />
         </Link>
-        <img src={menu} alt="menu" className="inline" />
+        <button type="button" onClick={openHandler}>
+          <img src={menu} alt="menu" className="inline" />
+        </button>
       </div>
       <div className="hidden lg:flex bg-white bg-opacity-70 top-0 fixed z-10 w-full h-[4.5rem] border-b border-gray border-opacity-70 flex-row justify-between items-center">
         <div className="ml-[10rem]">
@@ -81,7 +91,7 @@ const Header = () => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
