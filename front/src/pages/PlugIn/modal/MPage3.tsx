@@ -1,4 +1,4 @@
-import page3 from "../../../assets/images/plugin/page3.png";
+import page3 from "../../../assets/images/plugin/page3.webp";
 
 const MPage3 = () => {
   return (

@@ -1,0 +1,27 @@
+/* 슬라이드 인 애니메이션 키 프레임 정의 */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* 슬라이드 인 애니메이션 클래스 정의 */
+.slide-in-from-right {
+  animation: slideInFromRight 0.3s ease-in-out; /* 원하는 지속 시간 및 타이밍 함수 설정 */
+}
+
+.slide-out-to-left {
+  animation: slideOutToLeft 0.3s ease-in-out;
+}

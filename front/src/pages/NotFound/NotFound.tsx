@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import notfound from "../../assets/images/404.png";
+import notfound from "../../assets/images/404.webp";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {

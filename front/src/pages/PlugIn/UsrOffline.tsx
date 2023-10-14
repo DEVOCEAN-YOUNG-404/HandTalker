@@ -1,4 +1,4 @@
-import plugin1 from "../../assets/images/plugin1.png";
+import plugin1 from "../../assets/images/plugin1.webp";
 import { Link } from "react-router-dom";
 
 const UsrOffline = () => {

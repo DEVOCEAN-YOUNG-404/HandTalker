@@ -1,11 +1,11 @@
-import discord_blue from "../../../assets/images/plugin/discord_blue.png";
-import naver from "../../../assets/images/plugin/naver.png";
-import google from "../../../assets/images/plugin/google.png";
-import kakaotalk from "../../../assets/images/plugin/kakaotalk.png";
-import instagram from "../../../assets/images/plugin/instagram.png";
-import facebook from "../../../assets/images/plugin/facebook.png";
-import twitter from "../../../assets/images/plugin/twitter.png";
-import devocean from "../../../assets/images/plugin/devocean.png";
+import discord_blue from "../../../assets/images/plugin/discord_blue.webp";
+import naver from "../../../assets/images/plugin/naver.webp";
+import google from "../../../assets/images/plugin/google.webp";
+import kakaotalk from "../../../assets/images/plugin/kakaotalk.webp";
+import instagram from "../../../assets/images/plugin/instagram.webp";
+import facebook from "../../../assets/images/plugin/facebook.webp";
+import twitter from "../../../assets/images/plugin/twitter.webp";
+import devocean from "../../../assets/images/plugin/devocean.webp";
 
 interface PlatformListProps {
   onSelect: (page: string) => void;

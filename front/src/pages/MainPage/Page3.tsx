@@ -1,6 +1,6 @@
-import school from "../../assets/icons/school.png";
-import hospital from "../../assets/icons/hospital.png";
-import work from "../../assets/icons/work.png";
+import school from "../../assets/icons/school.webp";
+import hospital from "../../assets/icons/hospital.webp";
+import work from "../../assets/icons/work.webp";
 
 const Page3 = () => {
   return (

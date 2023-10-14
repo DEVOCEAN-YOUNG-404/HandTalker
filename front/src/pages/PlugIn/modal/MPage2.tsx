@@ -1,6 +1,6 @@
-import discord from "../../../assets/icons/discord.png";
-import page2_1 from "../../../assets/images/plugin/page2-1.png";
-import page2_2 from "../../../assets/images/plugin/page2-2.png";
+import discord from "../../../assets/icons/discord.webp";
+import page2_1 from "../../../assets/images/plugin/page2-1.webp";
+import page2_2 from "../../../assets/images/plugin/page2-2.webp";
 
 const MPage2 = () => {
   return (

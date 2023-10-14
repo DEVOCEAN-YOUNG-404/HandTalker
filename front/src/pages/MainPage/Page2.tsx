@@ -1,5 +1,5 @@
-import main2 from "../../assets/images/main2.png";
-import logo from "../../assets/icons/logo.png";
+import main2 from "../../assets/images/main2.webp";
+import logo from "../../assets/icons/logo.svg";
 
 const Page2 = () => {
   return (

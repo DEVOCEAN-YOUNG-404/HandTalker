@@ -1,5 +1,5 @@
-import logo from "../../assets/icons/logo.png";
-import main from "../../assets/images/main.png";
+import logo from "../../assets/icons/logo.svg";
+import main from "../../assets/images/main.webp";
 import { Link } from "react-router-dom";
 
 const Page1 = () => {
@@ -12,7 +12,12 @@ const Page1 = () => {
         <p className="font-bold text-black text-[2rem] mb-[10px] font-main">
           내 손 안의 작은 수어 통역가
         </p>
-        <img src={logo} alt="logo" className="w-[190px] mb-[20px]" />
+        <img
+          src={logo}
+          loading="lazy"
+          alt="logo"
+          className="w-[190px] mb-[20px]"
+        />
         <p className="text-lg text-gray-400 font-main mb-[10px]">
           HandTalker와 함께라면
           <br /> 언제든 수어 번역 서비스를 이용하실 수 있습니다.
