@@ -24,6 +24,7 @@
     "react-fullpage": "^0.1.19",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
+    "react-lazy-load": "^4.0.1",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
