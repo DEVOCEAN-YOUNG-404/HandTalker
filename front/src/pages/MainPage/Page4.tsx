@@ -20,29 +20,20 @@ const Page4 = () => {
         </p>
       </div>
       <div className="flex flex-row items-center justify-center mt-[60px] space-x-6 md:space-x-[4rem]">
-        <LazyLoad>
-          <img
-            src={discord}
-            alt="discord"
-            className="w-auto h-[5rem] md:h-[10rem]"
-          />
-        </LazyLoad>
-        <LazyLoad>
-          <img
-            src={slack}
-            alt="slack"
-            className="w-auto h-[5rem] md:h-[10rem]"
-          />
-        </LazyLoad>
+        <img
+          src={discord}
+          alt="discord"
+          className="w-auto h-[5rem] md:h-[10rem]"
+        />
+
+        <img src={slack} alt="slack" className="w-auto h-[5rem] md:h-[10rem]" />
 
         <div className="rounded-full">
-          <LazyLoad>
-            <img
-              src={kakaotalk}
-              alt="kakaotalk"
-              className="w-auto h-[5rem] md:h-[10rem]"
-            />
-          </LazyLoad>
+          <img
+            src={kakaotalk}
+            alt="kakaotalk"
+            className="w-auto h-[5rem] md:h-[10rem]"
+          />
         </div>
       </div>
     </div>

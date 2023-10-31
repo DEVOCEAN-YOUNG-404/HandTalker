@@ -240,13 +240,13 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
               </div>
               {selectedItem!.name === "Discord" ? (
                 loading ? (
-                  <div className="w-48 h-12 mt-8 md:mt-14">
+                  <div className="w-48 h-12 mt-8 md:mt-10">
                     <p className="py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md sm:text-sm">
                       loading...
                     </p>
                   </div>
                 ) : (
-                  <div className="w-48 h-12 mt-8 md:mt-14">
+                  <div className="w-48 h-12 mt-8 md:mt-10">
                     <Listbox
                       value={selectedChannel}
                       onChange={setSelectedChannel}
@@ -269,7 +269,7 @@ const ConfigModal = ({ onOpenModal }: ModalProps) => {
                           leaveFrom="opacity-100"
                           leaveTo="opacity-0"
                         >
-                          <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                          <Listbox.Options className="absolute w-48 py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {channels.map((item, itemIdx) => (
                               <Listbox.Option
                                 key={itemIdx}

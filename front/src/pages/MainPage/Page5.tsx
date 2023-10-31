@@ -31,9 +31,7 @@ const Page5 = () => {
         <div className="flex flex-row items-center justify-center">
           <div className="flex flex-col md:flex-row items-center justify-start mt-[50px] md:ml-[10px] w-[200px] md:w-[400px]">
             <div className="w-[80px] h-[80px] md:w-[180px] md:h-[180px] rounded-full overflow-hidden">
-              <LazyLoad>
-                <img src={sujin} alt="sujin" className="w-full" />
-              </LazyLoad>
+              <img src={sujin} alt="sujin" className="w-full" />
             </div>
             <div className="flex flex-col items-center md:items-start justify-center md:ml-[20px]">
               <p className="mt-2 text-2xl font-bold text-black md:m-0 md:text-4xl font-main">
@@ -55,9 +53,7 @@ const Page5 = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center justify-start mt-[50px] md:ml-[10px] w-[200px] md:w-[400px]">
             <div className="w-[80px] h-[80px] md:w-[180px] md:h-[180px] rounded-full overflow-hidden">
-              <LazyLoad>
-                <img src={bokyeong} alt="bokyeong" className="w-full" />
-              </LazyLoad>
+              <img src={bokyeong} alt="bokyeong" className="w-full" />
             </div>
             <div className="flex flex-col items-center md:items-start justify-center md:ml-[20px]">
               <p className="mt-2 text-2xl font-bold text-black md:m-0 md:text-4xl font-main">
@@ -81,9 +77,7 @@ const Page5 = () => {
         <div className="flex flex-row items-center justify-center mt-[10px] md:mt-[50px]">
           <div className="flex flex-col md:flex-row items-center justify-start mt-[50px] md:ml-[10px] w-[200px] md:w-[400px]">
             <div className="w-[80px] h-[80px] md:w-[180px] md:h-[180px] rounded-full overflow-hidden">
-              <LazyLoad>
-                <img src={seungjun} alt="seungjun" className="w-full" />
-              </LazyLoad>
+              <img src={seungjun} alt="seungjun" className="w-full" />
             </div>
             <div className="flex flex-col items-center md:items-start justify-center md:ml-[20px]">
               <p className="mt-2 text-2xl font-bold text-black md:m-0 md:text-4xl font-main">
@@ -105,9 +99,7 @@ const Page5 = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center justify-start mt-[50px] md:ml-[10px] w-[200px] md:w-[400px]">
             <div className="w-[80px] h-[80px] md:w-[180px] md:h-[180px] rounded-full overflow-hidden">
-              <LazyLoad>
-                <img src={hyeonbin} alt="hyeonbin" className="w-full" />
-              </LazyLoad>
+              <img src={hyeonbin} alt="hyeonbin" className="w-full" />
             </div>
             <div className="flex flex-col items-center md:items-start justify-center md:ml-[20px]">
               <p className="mt-2 text-2xl font-bold text-black md:m-0 md:text-4xl font-main">
