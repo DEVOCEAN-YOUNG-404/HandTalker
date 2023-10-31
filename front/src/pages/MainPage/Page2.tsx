@@ -1,6 +1,5 @@
 import main2 from "../../assets/images/main2.webp";
 import logo from "../../assets/icons/logo.svg";
-import LazyLoad from "react-lazy-load";
 
 const Page2 = () => {
   return (
@@ -8,13 +7,11 @@ const Page2 = () => {
       id="section2"
       className="w-full h-[100vh] flex flex-row items-center justify-start md:space-x-20 px-10 md:pr-20"
     >
-      <LazyLoad>
-        <img
-          src={main2}
-          alt="main2"
-          className="hidden md:block w-auto max-w-full md:h-[23rem] lg:h-[27rem] xl:h-[30rem]"
-        />
-      </LazyLoad>
+      <img
+        src={main2}
+        alt="main2"
+        className="hidden md:block w-auto max-w-full md:h-[23rem] lg:h-[27rem] xl:h-[30rem]"
+      />
 
       <div className="md:min-w-[26rem] md:w-[28rem] lg:w-[35rem] xl:w-[43rem] flex flex-col">
         <div className="flex flex-row items-center justify-start">
