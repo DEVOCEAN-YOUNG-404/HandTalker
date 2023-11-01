@@ -85,7 +85,7 @@ const Translate = () => {
       {openModal && <ConfigModal onOpenModal={onModalAlert} />}
       <button
         onClick={onModalAlert}
-        className="w-[8rem] h-[2.5rem] md:w-[160px] md:h-[3rem] font-main text-xl font-bold items-end justify-end ml-[12rem] md:ml-[48.7rem] xl:ml-[61rem] text-white bg-main-2 rounded-lg"
+        className="w-[8rem] h-[2.5rem] md:w-[160px] md:h-[3rem] font-main text-xl font-bold items-end justify-end ml-[12rem] md:ml-[48.7rem] xl:ml-[67.5rem] text-white bg-main-2 rounded-lg"
       >
         연동 설정
       </button>

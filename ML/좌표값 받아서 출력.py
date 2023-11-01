@@ -21,9 +21,9 @@ async def handle_client(websocket, path):
             # 클라이언트로부터 메시지를 기다립니다.
             message = await websocket.recv()
             print(message)
-            data = json.loads(message)
-            if len(data) == 0:
+            if len(message) == 0 or message == "undefined":
                 continue
+            data = [json.loads(message)]
             numpy_array = np.array([[item["x"], item["y"], item["z"]] for item in data[0]], dtype=np.float32)
 
             num_joints = 21
@@ -70,7 +70,7 @@ async def handle_client(websocket, path):
 
 
 # WebSocket 서버를 시작합니다.
-start_server = websockets.serve(handle_client, "localhost", 8080)  # IP 주소와 포트를 설정합니다.
+start_server = websockets.serve(handle_client, "localhost", 8081)  # IP 주소와 포트를 설정합니다.
 
 
 async def main():
